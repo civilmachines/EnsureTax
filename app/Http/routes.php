@@ -115,8 +115,12 @@ $api->version('v1', function ($api) {
             'uses' => 'Auth\ITRController@editGSTFile'
         ]);
         $api->delete('/deletegstimage', [
-            'as' => 'post.deletegstimage',
+            'as' => 'delete.deletegstimage',
             'uses' => 'Auth\ITRController@delGSTImg'
+        ]);
+        $api->post('/corpitrstatus', [
+            'as' => 'post.corpitrstatus',
+            'uses' => 'Auth\ITRController@corpItrStatus'
         ]);
 
         /* -------------------------------ensureTax API----------------------------------------- */

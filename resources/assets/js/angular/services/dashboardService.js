@@ -341,6 +341,24 @@ app
             });
         };
 
+        $dashboardModel.corpItrStatus = function (data) {
+            return $http({
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                url: $API.API_CORP_ITR_STATUS,
+                method: 'POST',
+                data: data
+            }).success(function (response) {
+                if (response.success) {
+                    $dashboardModel.corpItrList = response.data;
+                }
+                return response;
+            }).error(function (data, status, headers) {
+                return $appModel.error(data, status);
+            });
+        };
+
 
 
 

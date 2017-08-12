@@ -163,6 +163,21 @@ app
             }
         }
     }])
+    .directive('addCorpItr', ['$authModel', '$CONFIG', function ($authModel, $CONFIG) {
+        return {
+            restrict: 'E',
+            replace: true,
+            template: function (element, attrs) {
+                var html =
+                    '<div class="row" data-ng-if="itr_exists">' +
+                    '<div class="col-sm-12 col-md-3 text-right">' +
+                    '<a ui-sref="add-corp-itr" class="btn btn-primary">' +
+                    'ADD ITR</a>' +
+                    '</div></div>'
+                return !$authModel.viewPermission($CONFIG.$ROLES.ADMIN) ? html : '<span></span>'
+            }
+        }
+    }])
 
     .directive('itrCheck', ['$authModel', '$CONFIG', function ($authModel, $CONFIG) {
         return {

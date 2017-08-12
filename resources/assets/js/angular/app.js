@@ -91,6 +91,7 @@ var app = angular.module('101housing', ['ui.router', 'ngMaterial', 'ngAnimate', 
         'API_UPLOAD_GST_FILES': baseUrl + 'api/v1/uploadgst',
         'API_EDIT_GST_FILE': baseUrl + 'api/v1/editgstfile/',
         'API_DELETE_GST_IMAGE': baseUrl + 'api/v1/deletegstimage',
+        'API_CORP_ITR_STATUS': baseUrl + 'api/v1/corpitrstatus',
 
         /*-------------------------------ensureTax API-----------------------------------------*/
 

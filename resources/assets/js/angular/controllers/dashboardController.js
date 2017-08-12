@@ -164,6 +164,7 @@ app
             },
 
             changeStatus: function () {
+                console.log($scope.itr)
                 if ($scope.itr && $scope.itr.status > 0 && $scope.itr.selected.length > 0) {
                     var data = {
                         id: $scope.itr.selected,
@@ -684,13 +685,13 @@ app
         });
     }])
     .controller('corporateITRList', ['$scope', '$state', '$filter', 'resolveData', 'toastr', '$appModel', '$dashboardModel', 'localStorageService', function ($scope, $state, $filter, resolveData, toastr, $appModel, $dashboardModel, localStorageService) {
-        if (!$dashboardModel.corpItrList.length > 0) {
+       /* if (!$dashboardModel.corpItrList.length > 0) {
             $scope.not_found = true;
             $scope.itr_exists = false;
             $scope.message = 'Data Not Found';
             return false;
-        }
-        $scope.itr_exists = true;
+        }*/
+        // $scope.itr_exists = true;
         angular.extend($scope, {
             filterdata: {
                 minValue: 0,
@@ -706,15 +707,82 @@ app
             },
             editTabDialog: function (row) {
                 $state.go('add-corp-itr', {id: row.id});
-            }
+            },
+            sortby: function (item, order) {
+                order = order ? 'desc' : 'asc';
+                var data = angular.extend($scope.filterdata, {orderby: item, order: order});
+                corpItrList(data, item, order);
+            },
 
+            changeStatus: function () {
+                if ($scope.itr && $scope.itr.status > 0 && $scope.itr.selected.length > 0) {
+                    var data = {
+                        id: $scope.itr.selected,
+                        status: $scope.itr.status
+                    };
+                    itrStatus(data);
+                } else if (!$scope.itr.selected.length > 0 && $scope.itr) {
+                    var status = {
+                        status: $scope.itr.status
+                    };
+                    corpItrList(status);
+                }
+            }
         });
+
+        function corpItrList(data) {
+            data = {
+                status: data.status,
+                orderBy: data.orderby,
+                order: data.order
+            };
+            $dashboardModel.CorporateITRList(data).then(function (result) {
+                if (!result.data.data.length > 0) {
+                    $scope.no_item = true;
+                    $scope.hide_list = true;
+                } else {
+                    $scope.hide_list = false;
+                    $scope.no_item = false;
+                }
+            })
+        }
+
+        function toggleCheckbox(item, list) {
+            var idx = list.indexOf(item);
+            if (idx > -1) {
+                list.splice(idx, 1);
+            } else {
+                list.push(item);
+            }
+        }
+
+        function itrStatus(data) {
+            $dashboardModel.corpItrStatus(data).then(function (result) {
+                if (result.data.success) {
+                    toastr.success("status Updated", 'Success!');
+                }
+                $appModel.progressBar(false, $scope);
+            })
+        }
 
         $scope.$watchCollection(function () {
             return $dashboardModel.corpItrList;
         }, function (newval, oldval) {
             if ($dashboardModel.corpItrList.length > 0) {
                 $scope.ITR = $dashboardModel.corpItrList;
+                $scope.not_found = true;
+                $scope.directives = true;
+                $scope.itr_exists = true;
+                $scope.message = 'Data Not Found';
+            }
+        });
+
+        $scope.$watchCollection(function () {
+            return $appModel.loadMasterCategory;
+        }, function (newval, oldval) {
+            if ($appModel.loadMasterCategory.length > 0) {
+                var loadMaster = $filter('parseParent')($appModel.loadMasterCategory, 0);
+                $scope.status = loadMaster.application_status;
             }
         });
 

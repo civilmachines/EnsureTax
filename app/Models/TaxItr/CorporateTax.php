@@ -32,7 +32,7 @@ class CorporateTax extends Model
         return $this->belongsTo('App\Models\TaxItr\Categories', 'ITR');
     }
 
-    public function STATUS()
+    public function status()
     {
         return $this->belongsTo('App\Models\TaxItr\Categories', 'status');
     }
@@ -254,13 +254,26 @@ class CorporateTax extends Model
 
     public static function ITRList($data)
     {
+        $orderby = 'id';
+        $order = 'desc';
         $user = Auth::User();
         try {
-            $query = CorporateTax::with(['ITR']);
+            $query = CorporateTax::with(['ITR', 'status']);
             if (!$user->hasRole(Config('auth.roles.Super_User'), false))
-                $itr =  $query->where('user_id', $user->agents->id);
+                $query->where('user_id', $user->agents->id);
 
-            $itr = $query->get();
+            if (array_has($data, 'orderBy') && array_has($data, 'order')) {
+                $orderby = $data['orderBy'];
+                $order = $data['order'];
+            }
+
+            if(!array_has($data, 'id') && array_has($data, 'status') && $data['status'] > 0){
+                $query->where('status', $data['status'])->get();
+            }
+            $itr = $query->orderBy($orderby, $order)->get();
+
+
+//            $itr = $query->get();
             if(!$itr){
                 return LeaseHelper::response(false, 200, 'Data Not Found');
             }
@@ -305,6 +318,22 @@ class CorporateTax extends Model
             return LeaseHelper::response(false, 200, $exe->getMessage());
         }
         return LeaseHelper::response(true, 200, 'Image Deleted Successfully');
+    }
+
+    public static function itrStatus($data){
+        try{
+            $value = $data['id'];
+            if(array_has($data, 'status')) {
+                foreach ($value as $id) {
+                    $sta = CorporateTax::where('id', $id)
+                        ->update(array('status' => $data['status']));
+                }
+            }
+        }catch (ModelNotFoundException $exe){
+            return LeaseHelper::response(false, 500, $exe->getMessage());
+        }
+        $sta = self::ITRList($data);
+        return LeaseHelper::response(true, 200, 'Successful', $sta['data']);
     }
 
 }

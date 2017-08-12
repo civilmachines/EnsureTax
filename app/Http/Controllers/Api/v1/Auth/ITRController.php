@@ -254,6 +254,12 @@ class ITRController extends Controller
         $result = GSTFilesImages::deleteImage($data);
         return response($result, $result['status_code']);
     }
+    function corpItrStatus(Request $request)
+    {
+        $data = $request->all();
+        $result = CorporateTax::itrStatus($data);
+        return response($result);
+    }
     /**
      * Show the form for creating a new resource.
      *
