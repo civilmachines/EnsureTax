@@ -1,0 +1,362 @@
+<div data-ng-class="active">
+
+    <div class="login-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-ng-click="close()"><span
+                    aria-hidden="true">&times;</span></button>
+            <h3 class="w-100">Login</h3>
+        </div>
+
+        <form name="loginForm" novalidate data-ng-submit="login()">
+            <div class="modal-body pb-0">
+
+                <md-input-container class="md-block">
+                    <label>Your email / mobile</label>
+                    <input name="email" data-ng-model="user.email" type="text"
+                           data-ng-pattern="/^([a-zA-Z0-9._]+@[a-zA-Z0-9]+\.[a-zA-Z.]{2,5}|\+?\d[0-9-]{9,14})$/"
+                           data-ng-exist="{property: 'email'}" required/>
+                    <div class="tooltip-error">
+                        <div ng-messages="loginForm.email.$error">
+                            <span ng-message="required">
+                                <i class="fa fa-info-circle"></i>
+                                <md-tooltip md-direction="left" md-z-index="9990">
+                                    Please enter your mobile or email address.
+                                </md-tooltip>
+                            </span>
+                            <span ng-message="pattern">
+                                <i class="fa fa-info-circle"></i>
+                                <md-tooltip md-direction="left" md-z-index="9990">
+                                    Please enter valid mobile or email address.
+                                </md-tooltip>
+                            </span>
+                            <span ng-message="exist">
+                                <i class="fa fa-info-circle"></i>
+                                <md-tooltip md-direction="left" md-z-index="9990">
+                                    You are not registered user!
+                                </md-tooltip>
+                            </span>
+                        </div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Password</label>
+                    <input id="password" name="password" data-ng-model="user.password" type="password" required/>
+                    <div class="tooltip-error">
+                        <div ng-messages="loginForm.email.$error">
+                            <span ng-message="required">
+                                <i class="fa fa-info-circle"></i>
+                                <md-tooltip md-direction="left" md-z-index="9990">
+                                    Please enter your password.
+                                </md-tooltip>
+                            </span>
+                        </div>
+                    </div>
+                </md-input-container>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p class="pull-left login_text">Not a member? <a href="#" data-ng-click="alink('register')">Sign
+                            Up</a></p>
+
+                        <p class="pull-right text-right small forgot_text back_it1"> Forgot <a href="#"
+                                                                                               data-ng-click="alink('forgot')">
+                            Password?</a></p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer text-right">
+                <button class="btn btn-lg btn-success btn-block ml-auto" data-ng-disabled="activated">Login</button>
+                <md-progress-linear data-ng-if="activated" class="md-warn" md-mode="buffer"
+                                    value="<% determinateValue %>"
+                                    md-buffer-value="<% determinateValue2 %>"
+                                    data-ng-disable="activated"></md-progress-linear>
+            </div>
+        </form>
+
+    </div>
+
+    <div class="forgot-content">
+        <div class="modal-header">
+            <button type="button" class="back back_it1" data-ng-click="alink()">
+                <span aria-hidden="true">&larr;</span></button>
+            <h3 class="w-100">Login</h3>
+        </div>
+        <form name="otpLoginForm" novalidate data-ng-submit="otpLogin()">
+            <div class="modal-body pb-0">
+                <md-input-container class="md-block">
+                    <label>Your email / mobile</label>
+                    <input id="email" name="email" data-ng-model="user.email" type="text"
+                           data-ng-pattern="/^([a-zA-Z0-9._]+@[a-zA-Z0-9]+\.[a-zA-Z.]{2,5}|\+?\d[0-9-]{9,14})$/"
+                           data-ng-exist="{property: 'email'}" required/>
+                    <div class="tooltip-error">
+                        <div ng-messages="otpLoginForm.email.$error">
+                            <span ng-message="required">
+                                <i class="fa fa-info-circle"></i>
+                                <md-tooltip md-direction="left" md-z-index="9990">
+                                    Please enter your mobile or email address.
+                                </md-tooltip>
+                            </span>
+                            <span ng-message="pattern">
+                                <i class="fa fa-info-circle"></i>
+                                <md-tooltip md-direction="left" md-z-index="9990">
+                                    Please enter valid mobile or email address.
+                                </md-tooltip>
+                            </span>
+                            <span ng-message="exist">
+                                <i class="fa fa-info-circle"></i>
+                                <md-tooltip md-direction="left" md-z-index="9990">
+                                    You are not registered user!
+                                </md-tooltip>
+                            </span>
+                        </div>
+                    </div>
+                </md-input-container>
+                <!--<div class="row">-->
+                <!--<div class="col-sm-12">-->
+                <!--<p class="pull-right small forgot_text"> Have-->
+                <!--<a href="#" data-ng-click="alink()">Password?</a>-->
+                <!--</p>-->
+                <!--</div>-->
+                <!--</div>-->
+            </div>
+            <div class="modal-footer text-right">
+                <button class="btn btn-lg btn-success btn-block ml-auto" data-ng-disabled="activated">Submit</button>
+                <md-progress-linear data-ng-if="activated" class="md-warn" md-mode="buffer"
+                                    value="<% determinateValue %>"
+                                    md-buffer-value="<% determinateValue2 %>"
+                                    data-ng-disable="activated"></md-progress-linear>
+            </div>
+        </form>
+    </div>
+
+    <div class="otp-content">
+        <div class="modal-header">
+            <button type="button" class="back" data-ng-click="alink()"><span aria-hidden="true">&larr;</span>
+            </button>
+            <h3 class="w-100">Login</h3>
+        </div>
+        <form name="otpForm" novalidate data-ng-submit="verify()">
+            <div class="modal-body pb-0">
+                <md-input-container class="md-block">
+                    <label>Your email / mobile</label>
+                    <input name="email" data-ng-model="user.email" type="text"
+                           data-ng-pattern="/^([a-zA-Z0-9._]+@[a-zA-Z0-9]+\.[a-zA-Z.]{2,5}|\+?\d[0-9-]{9,14})$/"
+                           data-ng-exist="{property: 'email'}" required disabled/>
+                    <div class="tooltip-error">
+                        <div ng-messages="otpForm.email.$error">
+                            <span ng-message="required">
+                                <i class="fa fa-info-circle"></i>
+                                <md-tooltip md-direction="left" md-z-index="9990">
+                                    Please enter your mobile or email address.
+                                </md-tooltip>
+                            </span>
+                            <span ng-message="pattern">
+                                <i class="fa fa-info-circle"></i>
+                                <md-tooltip md-direction="left" md-z-index="9990">
+                                    Please enter valid mobile or email address.
+                                </md-tooltip>
+                            </span>
+                            <span ng-message="exist">
+                                <i class="fa fa-info-circle"></i>
+                                <md-tooltip md-direction="left" md-z-index="9990">
+                                    You are not registered user!
+                                </md-tooltip>
+                            </span>
+                        </div>
+                    </div>
+                    <span class="change"><a href="#" data-ng-click="alink('forgot')"> Change  <i
+                            class="fa fa-repeat"></i></a></span>
+                </md-input-container>
+
+                <div class="col-md-6 center-block border-top-0">
+                    <md-input-container class="md-block btn-rounded">
+                        <label>Enter OTP</label>
+                        <input name="otp" data-ng-model="user.otp" type="text" data-ng-pattern="/^[0-9]{1,6}$/"
+                               data-ng-valid required/>
+                        <div class="tooltip-error">
+                            <div ng-messages="otpForm.otp.$error">
+                                <span ng-message="required">
+                                    <i class="fa fa-info-circle"></i>
+                                    <md-tooltip md-direction="left" md-z-index="9990">
+                                        Please enter your mobile or email address.
+                                    </md-tooltip>
+                                </span>
+                                <span ng-message="pattern">
+                                    <i class="fa fa-info-circle"></i>
+                                    <md-tooltip md-direction="left" md-z-index="9990">
+                                        Please enter valid OTP.
+                                    </md-tooltip>
+                                </span>
+                                <span ng-message="valid">
+                                    <i class="fa fa-info-circle"></i>
+                                    <md-tooltip md-direction="left" md-z-index="9990">
+                                        Invalid OTP
+                                    </md-tooltip>
+                                </span>
+                            </div>
+                        </div>
+                    </md-input-container>
+                    <p class="small"><a href="#" data-ng-click="resent()">Resend OTP <i class="fa fa-repeat"></i></a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="modal-footer text-right">
+                <button class="btn btn-lg btn-success btn-block ml-auto" data-ng-disabled="activated">Verify</button>
+                <md-progress-linear data-ng-if="activated" class="md-warn" md-mode="buffer"
+                                    value="<% determinateValue %>"
+                                    md-buffer-value="<% determinateValue2 %>"
+                                    data-ng-disable="activated"></md-progress-linear>
+            </div>
+        </form>
+    </div>
+
+    <div class="register-content">
+        <div class="modal-header">
+            <button type="button" class="back back_it1" data-ng-click="alink()">
+                <span aria-hidden="true">&larr;</span></button>
+            <h3 class="w-100">Sign Up</h3>
+        </div>
+
+        <form name="registerForm" novalidate data-ng-submit="register()">
+            <div class="modal-body pb-0">
+                <!--<div class="row social_login mb-2">
+                  <div class="col-sm-6 text-right">
+                       <button type="button" class="btn btn-fb btn-block waves-effect waves-light" tabindex="59"><i class="fa fa-facebook left"></i> Facebook</button>
+                   </div>
+                   <div class="col-sm-6 text-left">
+                       <button type="button" class="btn btn-gplus btn-block waves-effect waves-light" tabindex="61"><i class="fa fa-google-plus left"></i> Google +</button>
+                   </div>
+
+               </div>-->
+
+
+                <md-input-container class="md-block">
+                    <label>Name</label>
+                    <input name="name" data-ng-model="user.name" type="text" ng-pattern="/^[a-zA-Z\s]*$/"
+                           required/>
+                    <div class="tooltip-error">
+                        <div ng-messages="registerForm.name.$error">
+                                        <span ng-message="required">
+                                           <i class="fa fa-info-circle"></i>
+                                               <md-tooltip md-direction="left" md-z-index="99991">
+                                                 Please enter your name.
+                                               </md-tooltip>
+                                        </span>
+                            <span ng-message="pattern">
+                                           <i class="fa fa-info-circle"></i>
+                                               <md-tooltip md-direction="left" md-z-index="99991">
+                                                   Please enter a valid name(alphabets only).
+                                               </md-tooltip>
+                                        </span>
+                        </div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Email</label>
+                    <input name="mail" data-ng-model="user.email" type="text"
+                           data-ng-pattern="/^([a-zA-Z0-9._]+@[a-zA-Z0-9]+\.[a-zA-Z.]{2,5}|\+?\d[0-9-]{9,14})$/"
+                           ng-unique="{property: 'email'}" required/>
+                    <div class="tooltip-error">
+                        <div ng-messages="registerForm.mail.$error">
+                            <span ng-message="required">
+                                <i class="fa fa-info-circle"></i>
+                                <md-tooltip md-direction="left" md-z-index="9990">
+                                    Please enter email address.
+                                </md-tooltip>
+                            </span>
+                            <span ng-message="pattern">
+                                <i class="fa fa-info-circle"></i>
+                                <md-tooltip md-direction="left" md-z-index="9990">
+                                    Please enter valid email address.
+                                </md-tooltip>
+                            </span>
+                            <span ng-message="unique">
+                                <i class="fa fa-info-circle"></i>
+                                <md-tooltip md-direction="left" md-z-index="9990">
+                                    Email-ID already in use!
+                                </md-tooltip>
+                            </span>
+                        </div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Mobile</label>
+                    <input name="username" data-ng-model="user.username" type="text"
+                           data-ng-pattern="/^\+?\d[0-9-]{9,20}/"
+                    /> <!--required data-ng-unique="{property: 'username'}"-->
+                    <div class="tooltip-error">
+                        <div ng-messages="registerForm.username.$error">
+                            <!--<span ng-message="required">-->
+                            <!--<i class="fa fa-info-circle"></i>-->
+                            <!--<md-tooltip md-direction="left" md-z-index="99991">-->
+                            <!--Please Enter Valid Mobile Number-->
+                            <!--</md-tooltip>-->
+                            <!--</span>-->
+                            <span ng-message="pattern">
+                                <i class="fa fa-info-circle"></i>
+                                <md-tooltip md-direction="left" md-z-index="99991">
+                                    Please Enter a Valid Mobile Number
+                                </md-tooltip>
+                            </span>
+                            <!--<span ng-message="unique">-->
+                            <!--<i class="fa fa-info-circle"></i>-->
+                            <!--<md-tooltip md-direction="left" md-z-index="99991">-->
+                            <!--Mobile Number is Already in Use-->
+                            <!--</md-tooltip>-->
+                            <!--</span>-->
+                        </div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Password</label>
+                    <input name="password" data-ng-model="user.password" type="password"
+                           data-ng-minlength="6" data-ng-maxlength="20" required/>
+                    <div class="tooltip-error">
+                        <div ng-messages="registerForm.password.$error">
+                                        <span ng-message="required">
+                                           <i class="fa fa-info-circle"></i>
+                                               <md-tooltip md-direction="left" md-z-index="99991">
+                                                    Please enter your password.
+                                               </md-tooltip>
+                                        </span>
+                            <span ng-message="minlength">
+                                           <i class="fa fa-info-circle"></i>
+                                               <md-tooltip md-direction="left" md-z-index="99991">
+                                                     Enter minimum 6 character password
+                                               </md-tooltip>
+                                        </span>
+                            <span ng-message="maxlength">
+                                           <i class="fa fa-info-circle"></i>
+                                               <md-tooltip md-direction="left" md-z-index="99991">
+                                                     Password, Maximum 20 Characters
+                                               </md-tooltip>
+                                        </span>
+                        </div>
+                    </div>
+                </md-input-container>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p class="pull-left login_text">Already a member? <a href="#" data-ng-click="alink()">Sign
+                            in</a></p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer text-right">
+                <button class="btn btn-lg btn-success btn-block ml-auto" data-ng-disabled="activated">Sign Up</button>
+                <md-progress-linear data-ng-if="activated" class="md-warn" md-mode="buffer"
+                                    value="<% determinateValue %>"
+                                    md-buffer-value="<% determinateValue2 %>"
+                                    data-ng-disable="activated"></md-progress-linear>
+            </div>
+        </form>
+    </div>
+
+    <div class="clearfix"></div>
+</div>

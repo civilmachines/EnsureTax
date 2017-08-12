@@ -1,0 +1,47 @@
+
+<?php $__env->startSection('css'); ?>
+    <link rel="stylesheet" href="<?php echo e(asset('css/static.min.css')); ?>" media="screen">
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <hs-header></hs-header>
+
+    <main>
+        <div class="static_page">
+            <div class="container pb-4">
+
+                <section>
+                    <h1 class="section-heading">Contact Us</h1>
+                    <p class=" text-center mb-2">You can contact us by submitting the form below.</p>
+                    <div class="row">
+
+                        <div ui-view="contactUs" class="col-md-8">
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="col-md-4">
+                            <h4>Corporate Office</h4>
+                            <ul class="contact-icons">
+                                <li>
+                                    <p><i class="fa fa-map-marker"></i> &nbsp; B-816, Advant Navis Business
+                                        Park, <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sector 142, Expressway, <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        Noida (UP) 201305 INDIA</p>
+                                </li>
+                                <li>
+                                    <p><i class="fa fa-phone"></i> &nbsp; (+91) 120 4545647</p>
+                                </li>
+                                <li>
+                                    <p><i class="fa fa-envelope"></i> &nbsp; info@101housing.com</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <hs-footer></hs-footer>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('script'); ?>
+    <script type='text/javascript' src="<?php echo e(asset('js/static.min.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

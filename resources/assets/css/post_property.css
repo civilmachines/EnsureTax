@@ -1,0 +1,89 @@
+.post_p_banner {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	background: url(../images/11.jpg);
+	background-position: center;
+	height: 250px;
+	background-size: cover;
+}
+.post_p_banner:before {
+	content: '';
+	display: block;
+	clear: both;
+	background: rgba(6, 6, 6, 0.35);
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+.post_p_banner .caption {
+	position: absolute;
+	right: 15%;
+	bottom: 50px;
+	left: 15%;
+	z-index: 10;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	color: #fff;
+	text-align: center;
+	text-shadow: 0 1px 2px rgba(0,0,0,.6);
+}
+.post_p_banner .caption h1 {
+	font-size: 32px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.post_p_banner .caption p {
+	font-size: 20px;
+	line-height: 30px;
+	margin: 0 0 20px;
+	font-weight: 400;
+	text-align: center;
+	color: #fff;
+}
+.post_property {
+}
+.post_property .container {
+	margin-top: -55px;
+}
+.post_property .form-group {
+	margin-bottom: 5px;
+}
+.post_property .modal-footer {
+	padding: 7px 0px;
+}
+.post_property h4 {
+	font-size: 1rem;
+	font-weight: bold;
+}
+
+
+
+
+
+@media(max-width:768px) {
+.post_p_banner {
+	height: 310px;
+}
+.post_p_banner .caption {
+	left: 0;
+	right: 0;
+}
+.post_p_banner .caption h1 {
+	font-size: 32px;
+}
+.post_p_banner .caption p {
+	font-size: 12px;
+	line-height: 18px;
+	margin: 0 0 12px;
+}
+
+}
+ @media (min-width: 400px) and (max-width:768px) {
+
+}
+ @media(max-width:400px) {
+
+}

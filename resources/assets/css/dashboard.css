@@ -1,0 +1,300 @@
+.fixed-sn .double-nav {
+    padding-left: 20px;
+}
+
+.contact-card img {
+    max-width: 70px;
+}
+
+.contact-card .card-block {
+    padding: 0.5rem 1.25rem;
+}
+
+.cascading-admin-card .admin-up .data {
+    margin-top: 3rem;
+}
+
+.cascading-admin-card .admin-up .fa {
+    padding: 1rem;
+    margin-right: 2rem;
+}
+
+.contact-card .list-group-item {
+    padding: 1.1rem 1.25rem;
+}
+
+.list-group-item.active {
+    background-color: #CC0000;
+    border-color: #CC0000;
+}
+
+.list-group a {
+    color: #000;
+}
+
+.contact-card .contact-avatar {
+    border: 2px solid #CC0000;
+}
+
+md-tabs .md-tab.md-active {
+    color: #000;
+}
+
+.admin-panel.info-admin-panel .badge, .admin-panel.info-admin-panel .btn {
+    background-color: #333;
+}
+
+.admin-panel.info-admin-panel .btn:hover {
+    background-color: #06b209 !important;
+}
+
+.section .section-heading {
+    border-top: 0;
+    border-bottom: 0;
+    padding: 1rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+}
+
+.contact-card h4 {
+    font-size: 22px;
+}
+
+.card-block h5 {
+    margin-bottom: 0.2rem;
+}
+
+.section h4 {
+    font-size: 1em;
+    margin-bottom: 0;
+    margin-top: 1rem;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.post_property {
+}
+
+.card-block p {
+    margin-bottom: 0.5rem;
+    line-height: 1.3rem;
+    font-size: 14px;
+    color: #716d6d;
+}
+
+.section hr {
+    display: block;
+}
+
+.section hr {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.section .row {
+    margin-bottom: 1rem;
+    margin-right: -14px;
+}
+
+.admin-panel [type="checkbox"].filled-in:not(:checked) + label:after {
+    border: 2px solid #999;
+}
+
+.properties .btn .fa {
+    font-size: 0.9rem;
+    margin-top: -1px;
+    margin-right: 0.2rem;
+}
+
+
+
+
+/*----------------- ensure tax ---------------------*/
+.dash_sidebar{
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;}
+.dashboard_link{    
+    background: #F5F5F5;
+    border: 1px solid #E6E6E6;
+    padding: 0;
+    padding-top: 60px;
+    margin-top: -51px;
+    margin-bottom: -32px;
+    width: 100%;}
+
+.dashboard_link .list-group{ box-shadow: none;}
+.dashboard_link .list-group .list-group-item{ border: 0; background: transparent; border-bottom: dotted 1px #ccc; padding-left: 2.3rem; font-weight: 400;}
+.dashboard_link .list-group .list-group-item:first-child{border-top: solid 1px #dedede;}
+.dashboard_link .list-group .list-group-item:last-child{border-bottom:none;}
+.dashboard_link .list-group .list-group-item.active{color:#06b209;}
+.dashboard_link img{ max-width: 80px; border: double 6px #06b209;}
+.dashboard_link a{ position: relative;    
+                   transition: all 0.3s ease;
+                   -webkit-transition: all 0.3s ease;
+                   -moz-transition: all 0.3s ease;}
+.dashboard_link a:hover{
+    color: #06b209;
+    padding-left: 2.5rem !important;
+}
+.dashboard_link a i {
+    position: absolute;
+    top: 15px;
+    left: 25px;
+}
+.dashboard_link h4{ font-size: 1.5rem;}
+.dashboard_link p{ font-size: 1rem;}
+
+.dashboard_title{
+    border-bottom: 1px solid #CCCCCC;
+    margin: 0 0 20px;
+    font-weight: 600;
+    padding-bottom: 10px;}
+
+.dashboard_title h2 {
+    line-height: 1.2;
+    margin-bottom: 5px;
+    font-size: 28px;
+    color: #292929;
+    font-weight: 400;
+}
+.dashboard_title p {
+    margin-top: 0;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    color: #afadad;
+}
+
+.empty_dash {
+    background: #EDF2F2;
+    border-radius: 3px;
+    text-align: center;
+    padding: 30px 30px;
+    margin: 0px 0 20px;
+}
+.empty_dash img{box-shadow: none; text-align: center; display: initial;}
+
+.post-success{
+    width: 100%;
+    text-align: center;
+    background: #f9f9f9;
+    border-radius: 5px;
+    min-height: 350px;
+    padding: 2rem 1rem;}
+.post-success i{    
+    background: #0c0;
+    padding: 1rem;
+    border-radius: 50px;
+    color: #ffffff;}
+.post-success h2{    
+    font-size: 2rem;
+    margin-top: 1rem;}
+.post-success p{    
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.5;}
+.post-success .ok{}
+
+.itr_list {
+    background: #EDF2F2;
+    border-radius: 3px;
+    padding: 10px 20px 10px;
+    line-height: 1.4;    
+    margin-bottom: 1.5rem;
+}
+.itr_list .row{ margin-bottom: 0;}
+.itr_list a{    
+    color: #545454;
+    font-weight: bold;}
+
+
+
+.dashboard_sec figure {
+    margin: 0 auto;
+}
+
+.dashboard_sec figure img {
+    box-shadow: none !important;
+    display: inline;
+}
+
+.add_property_btn {
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+    padding: 12px;
+    position: fixed;
+    bottom: 5%;
+    right: 3%;
+    background: #CC0000;
+    color: #fff;
+    border-radius: 100%;
+    z-index: 999;
+    font-size: 2rem;
+}
+
+.add_property_btn:hover {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.deal_btn {
+    position: absolute;
+    right: 0;
+    top: 0.5rem;
+    background-color: #CC0000;
+}
+
+@media (max-width: 992px) {
+    .dashboard_link {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .dp-upload{ margin-top: 10px; margin-bottom: 1rem;}
+    .doc_img{max-width: 110px;}
+
+}
+
+@media (max-width: 768px) {
+    .contact-card {
+        text-align: center;
+    }
+
+    .contact-card .contact-avatar {
+        margin: 0 auto;
+    }
+
+    .add_property_btn {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+        min-height: 50px;
+        padding: 8px;
+        font-size: 1.3rem;
+    }
+
+    .deal_sec {
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+
+}
+
+@media (min-width: 400px) and (max-width: 768px) {
+
+}
+
+@media (max-width: 500px) {
+    .properties .btn {
+        width: 45%;
+        margin: 5px;
+    }
+}

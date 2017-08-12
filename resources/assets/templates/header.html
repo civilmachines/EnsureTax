@@ -1,0 +1,50 @@
+<header>
+    <md-sidenav class="md-sidenav-right" md-component-id="right" md-whiteframe="4">
+        <div class="help_no">
+            <!--<i class="fa fa-phone"></i> +91 120 4545647-->
+        </div>
+        <md-content layout-margin>
+            <ul class="collapsible collapsible-accordion">
+                <li><a href="/" target="_self"> Home</a></li>
+                <li><a href="/about" target="_self" title="About Us">About Us</a></li>
+                <li><a href="/terms" target="_self" title="Terms of use">Terms of use</a></li>
+                <li><a href="/terms" target="_self" title="Privacy Policy">Privacy Policy</a></li>
+                <li><a href="/contact" target="_self" title="Contact us">Contact us</a></li>
+            </ul>
+        </md-content>
+        <ul class="social">
+            <li><a href="https://www.facebook.com" target="_blank" class="fb-ic" title="facebook"><i
+                    class="fa fa-facebook"> </i></a></li>
+            <li><a class="pin-ic"><i class="fa fa-pinterest"> </i></a></li>
+            <li><a class="gplus-ic"><i class="fa fa-google-plus"> </i></a></li>
+            <li><a class="tw-ic"><i class="fa fa-twitter"> </i></a></li>
+        </ul>
+    </md-sidenav>
+    <nav class="navbar fixed-top navbar-toggleable-md navbar-dark double-nav" scroll
+         ng-class="{scroll_fixed:nav_fixed}">
+        <a href="/" class="" target="_self"><img src="images/logo.png" class="img-fluid" alt="EnsureTax"></a>
+
+        <ul class="nav navbar-nav nav-flex-icons ml-auto">
+           
+
+            <li data-ng-if="!auth" class="nav-item">
+                <a href="#" class="nav-link waves-effect waves-light" data-ng-click="signin()">
+                    <i class="fa fa-sign-in"></i> Login</a>
+            </li>
+            <li data-ng-if="auth" class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle waves-effect waves-light" href="#" id="userDropdown"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user"></i> <span class="hidden-sm-down" data-ng-bind="authUser.name"></span>
+                </a>
+                <div class="dropdown-menu dropdown-ins dropdown-menu-right" aria-labelledby="userDropdown">
+                    <a class="dropdown-item waves-effect waves-light" href="/dashboard" target="_self">My account</a>
+                    <a class="dropdown-item waves-effect waves-light" href="#" data-ng-click="logout()">Log Out</a>
+
+                </div>
+            </li>
+        </ul>
+        <div class="float-right">
+            <a href="#" data-ng-click="toggleRight()" class="button-collapse"><i class="fa fa-bars"></i></a>
+        </div>
+    </nav>
+</header>

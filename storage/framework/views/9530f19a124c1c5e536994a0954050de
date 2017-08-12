@@ -1,0 +1,10 @@
+<?php $__env->startSection('css'); ?>
+    <link rel="stylesheet" href="<?php echo e(asset('css/home.min.css')); ?>" media="screen"/>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <ui-view></ui-view>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('script'); ?>
+    <script type='text/javascript' src="<?php echo e(asset('js/home.min.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

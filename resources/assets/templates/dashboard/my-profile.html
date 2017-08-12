@@ -1,0 +1,135 @@
+<div class="card card-cascade narrower post_property">
+    <div class="admin-panel info-admin-panel">
+        <div class="card-header success-color white-text">
+            My Profile
+        </div>
+        <div class="card-block">
+            <form name="profileForm" novalidate data-ng-submit="postProfile()" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-md-4">
+                        <md-input-container class="md-block">
+                            <label>Name</label>
+                            <input type="text" name="name" data-ng-model="profile.name">
+                        </md-input-container>
+                    </div>
+                    <div class="col-md-4">
+                        <md-input-container class="md-block">
+                            <label>Email Id</label>
+                            <input type="text" name="email" data-ng-model="profile.email">
+                        </md-input-container>
+                    </div>
+                    <div class="col-md-4">
+                        <md-input-container class="md-block">
+                            <label>Mobile</label>
+                            <input type="text" name="mobile" data-ng-model="profile.mobile">
+                        </md-input-container>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <md-input-container class="md-block">
+                            <label>IFSC Code</label>
+                            <input type="text" name="ifsc" data-ng-model="profile.ifsc_code">
+                        </md-input-container>
+                    </div>
+                    <div class="col-md-4">
+                        <md-input-container class="md-block">
+                            <label>Residential Status</label>
+                            <md-select name="ITR" data-ng-model="profile.residential_status">
+                                <md-option ng-repeat="res in residence track by $index" ng-value="<%res.value%>">
+                                    <%res.text%>
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                    <div class="col-md-4">
+                        <md-input-container class="md-block">
+                            <label>Employer Category</label>
+                            <md-select name="employer" data-ng-model="profile.employer_category">
+                                <md-option ng-repeat="emp in employer track by $index" ng-value="<%emp.value%>">
+                                    <%emp.text%>
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div class="card-block bdr-btm">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <fieldset class="form-group">
+                                <span>Upload Pan Card</span>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-md-4 text-center">
+                            <label class="dp-upload">
+                                <input type="file" name="pan_image" ng-file-model="profile.pan_image" multiple>
+                                <i class="fa fa-upload"></i> <span>Upload doc</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="doc_img" data-ng-repeat="row in profile.pan_image track by $index">
+                        <img data-ng-src="<%row|proImageUrl%>" alt="img">
+                        <a class="down_img" href="<%row|downloadProImage%>" target="_self" download><i class="fa fa-download"></i></a>
+                        <a class="remove_img" data-ng-click="remove(row,'pan_image')"><i class="fa fa-close"></i></a>
+                    </div>
+                </div>
+                <div class="card-block bdr-btm">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <fieldset class="form-group">
+                                <span>Previous Year Return</span>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-md-4 text-center">
+                            <label class="dp-upload">
+                                <input type="file" name="previous_return_image" ng-file-model="profile.previous_return_image"
+                                       multiple>
+                                <i class="fa fa-upload"></i> <span>Upload doc</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="doc_img" data-ng-repeat="row in profile.previous_return_image track by $index">
+                        <img data-ng-src="<%row|proImageUrl%>" alt="img">
+                        <a class="down_img" href="<%row|downloadProImage%>" target="_self" download><i class="fa fa-download"></i></a>
+                        <a class="remove_img" data-ng-click="remove(row,'previous_return_image')"><i class="fa fa-close"></i></a>
+                    </div>
+                </div>
+                <div class="card-block bdr-btm">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <fieldset class="form-group">
+                                <span>Bank Statement</span>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-md-4 text-center">
+                            <label class="dp-upload">
+                                <input type="file" name="bank_statement" ng-file-model="profile.bank_statement" multiple>
+                                <i class="fa fa-upload"></i> <span>Upload doc</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="doc_img" data-ng-repeat="row in profile.bank_statement track by $index">
+                        <img data-ng-src="<%row|proImageUrl%>" alt="img">
+                        <a class="down_img" href="<%row|downloadProImage%>" target="_self" download><i class="fa fa-download"></i></a>
+                        <a class="remove_img" data-ng-click="remove(row,'bank_statement')"><i class="fa fa-close"></i></a>
+                    </div>
+                </div>
+                <md-input-container class="md-block">
+                    <label>Residence Address</label>
+                    <textarea data-ng-model="profile.address" name="address" rows="3"
+                              md-select-on-focus></textarea>
+                </md-input-container>
+                <div class="modal-footer border-top-0 text-center">
+                    <input data-ng-model="propLoc.id" type="hidden" name="id"/>
+                    <button class="btn btn-rounded btn-lg waves-effect waves-light"
+                            data-ng-disabled="activated">Save
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

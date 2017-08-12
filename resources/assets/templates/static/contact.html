@@ -1,0 +1,115 @@
+<div class="card mb-3">
+    <div class="card-header green white-text">
+        <h4 class="section-heading">Send us a Message</h4>
+    </div>
+    <div class="card-block">
+        <div class="sucess-mess" data-ng-show="show">
+            <span class="check-success">
+                <i class="fa fa-check"></i>
+            </span>
+            <h3>Thank you</h3>
+            <p>Your request has been recorded. <br>
+                A representative from <strong>ensureTax</strong> will get back to
+                you shortly.</p>
+        </div>
+        <form name="contactForm" novalidate data-ng-submit="contactUs()" data-ng-hide="show">
+            <!--<h3>Send us a message</h3>-->
+            <div class="form-group" data-show-errors>
+                <div class="row">
+                    <!--First column-->
+                    <div class="col-md-6 post_property">
+                        <md-input-container class="md-block">
+                            <label>Your name</label>
+                            <input name="name" data-ng-model="contact.name"
+                                   ng-pattern="/^[a-zA-Z\s]*$/" type="text" required/>
+                            <div class="tooltip-error">
+                                <div class="errors"
+                                     ng-messages="contactForm.name.$error">
+                                                         <span ng-message="required">
+                                                            <i class="fa fa-info-circle"></i>
+                                                            <md-tooltip md-direction="left">
+                                                             Enter your name
+                                                            </md-tooltip>
+                                                        </span>
+                                    <span ng-message="pattern">
+                                                            <i class="fa fa-info-circle"></i>
+                                                            <md-tooltip md-direction="left">
+                                                            Please enter a valid name(alphabets only).
+                                                            </md-tooltip>
+                                                        </span>
+                                </div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                    <div class="col-md-6">
+                        <md-input-container class="md-block">
+                            <label>Your email</label>
+                            <input name="email" data-ng-model="contact.email"
+                                   data-ng-pattern="/^[a-zA-Z0-9._]+@[a-zA-Z0-9]+\.[a-zA-Z.]{2,5}$/"
+                                   type="text" required/>
+
+                            <div class="tooltip-error">
+                                <div class="errors"
+                                     ng-messages="contactForm.email.$error">
+                                                         <span ng-message="required">
+                                                            <i class="fa fa-info-circle"></i>
+                                                            <md-tooltip md-direction="left">
+                                                             Enter your email id
+                                                            </md-tooltip>
+                                                        </span>
+                                    <span ng-message="pattern">
+                                                            <i class="fa fa-info-circle"></i>
+                                                            <md-tooltip md-direction="left">
+                                                             Please enter valid email-ID (abc@xyz.com).
+                                                            </md-tooltip>
+                                                        </span>
+                                </div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <md-input-container class="md-block">
+                            <label>Your mobile</label>
+                            <input name="contact" data-ng-pattern="/^\+?\d[0-9-]{9,20}/"
+                                   data-ng-model="contact.contact"
+                                   type="text" required/>
+                            <div class="tooltip-error">
+                                <div class="errors"
+                                     ng-messages="contactForm.contact.$error">
+                                                         <span ng-message="required">
+                                                            <i class="fa fa-info-circle"></i>
+                                                            <md-tooltip md-direction="left">
+                                                                Enter mobile number
+                                                            </md-tooltip>
+                                                        </span>
+                                    <span ng-message="pattern">
+                                                            <i class="fa fa-info-circle"></i>
+                                                            <md-tooltip md-direction="left">
+                                                           Enter valid mobile number
+                                                            </md-tooltip>
+                                                        </span>
+                                </div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                </div>
+
+                <md-input-container class="md-block">
+                    <label>Message</label>
+                    <textarea name="message" data-ng-model="contact.message" rows="3"></textarea>
+                </md-input-container>
+                <div class="text-center">
+                    <center><div class="col-md-2">
+                        <button class="btn btn-rounded btn btn-success">Send</button>
+                        <md-progress-linear data-ng-if="activated" class="md-warn" md-mode="buffer"
+                                            value="<% determinateValue %>"
+                                            md-buffer-value="<% determinateValue2%>"
+                                            data-ng-disable="activated"></md-progress-linear>
+                    </div></center>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

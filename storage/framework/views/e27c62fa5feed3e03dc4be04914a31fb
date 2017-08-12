@@ -1,0 +1,223 @@
+
+<?php $__env->startSection('css'); ?>
+    <link rel="stylesheet" href="<?php echo e(asset('css/static.min.css')); ?>" media="screen">
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <hs-header></hs-header>
+    <div class="about_banner">
+        <div class="col-md-6 col-sm-12 center-block caption">
+            <h1> Terms & Conditions </h1>
+        </div>
+    </div>
+    <main>
+        <div class="static_page">
+            <div class="container pb-4">
+                <div class="card">
+                    <div class="card-block p-5">
+                        <p>This website, www.101housing.com (hereinafter referred to as "Website") is owned, hosted and operated by CIVIL MACHINES TECHNOLOGIES PRIVATE LIMITED (“CMTPL”), a company registered under the laws of India which manages the online property related technology platform www.101housing.com.</p>
+                        <h4>1. ACCEPTANCE TO TERMS OF USE</h4>
+
+                        <p>The use of this Website by You is solely governed by these Terms of Use ("Terms" or "Terms of
+                            Use") and any policy/terms so mentioned by terms of reference. Browsing the Website or use
+                            of the services offered through the Website shall be taken to mean that you have read and
+                            agreed to Terms of Use so binding in you and that you are contracting with CMTPL and have
+                            undertaken binding obligations with CMTPL. By impliedly or expressly accepting these Terms
+                            of Use, You also accept and agree to be bound by Privacy Policy, which may be amended from
+                            time to time.</p>
+
+                        <p>You will be subject to the rules, guidelines, policies, terms, and conditions applicable to
+                            any service that is provided by this Website, and they shall be deemed to be incorporated
+                            into this Terms of Use and shall be considered as part of Terms of Use.</p>
+
+                        <h4>2. AMENDMENT/MODIFICATION OF TERMS/SERVICES</h4>
+
+                        <p>We hold the sole right to modify the Terms of Use without prior permission from you or
+                            informing you. The relationship creates on you, a duty to periodically check these Terms and
+                            stay updated on its requirements. If you continue to browse/use the Website following such a
+                            change, this is deemed as consent by you to the so amended policies.</p>
+
+                        <p>CMTPL, reserves its right to withdraw wholly or partly, without assigning any reason, any of
+                            Services offered through the Website with or without any notice.</p>
+
+                        <h4>3.SCOPE OF SERVICES</h4>
+
+                        <p>CMTPL offers an array of online services including but not limited to listing of properties
+                            on the website for sale, lease, purchase, creating a network for an apartment
+                            complex/building whereby. You can interact with your neighbors, apartment complex
+                            accounting, registration of society, posting classified advertisements, services offered by
+                            various third party vendors ("Services"). The services offered by CMTPL may be availed by
+                            both individuals and organizations such as builders or brokers. You are permitted to post
+                            your requirements / advertisements on our website as long as such posting is genuine and is
+                            in accordance with the Terms. </p>
+
+                        <p>Further, with your consent, you may authorize any person, including CMTPL, to carry out the
+                            postings on your behalf and such postings shall also be in accordance with the Terms. You
+                            shall be solely liable for any posting done by you or by any person on your behalf or with
+                            your consent.</p>
+
+                        <h4>4. REGISTRATION OBLIGATION AND MEMBERSHIP</h4>
+
+                        <p>In order to avail the various services offered by us, you are required to register with
+                            CMTPL. If you represent an organization and wish to use the Services for your organization,
+                            we recommend that you, and all other users from your organization, sign up for user accounts
+                            by providing your corporate contact information. The membership of this website is available
+                            only to those above the age of 18 barring those incompetent to contract which inter alias
+                            include insolvents and the same is not allowed to minors as described by the Indian Contract
+                            Act, 1872. If you are a minor and wish to browse/use the Website, you may do so through your
+                            legal guardian and CMTPL reserves the right to terminate your account on knowledge of you
+                            being a minor and using the membership of the Website.</p>
+
+                        <p>Further, you are solely responsible for protecting the confidentiality of your username and
+                            password and any activity under the account will be deemed to have been done by you. You
+                            agree to: a) provide true, accurate, current and complete information about yourself as
+                            prompted by the sign up process; and b) maintain and promptly update the information
+                            provided during sign up to keep it true, accurate, current, and complete. </p>
+
+                        <p>In the event you provide us with false and inaccurate details or CMTPL has a valid reason to
+                            believe that false and inaccurate information has been furnished, we hold the rights to
+                            permanently suspend your account and levy penalty (esp. for brokers who list as owners or
+                            builders providing fake information).</p>
+
+
+                        <h4>5. PAYMENT OBLIGATION</h4>
+
+                        <p>The charges/fees for the various services offered by CMTPL have been clearly set forth in the
+                            Website. There are both paid services and free services offered thorough the Website. The
+                            details of the services that are offered without charges and with charges are clearly set
+                            out in Website or you may communicate with us at info@101lease.com to get more information.
+                            You understand that the Services offered without any charges are restricted (as per the
+                            information you may have obtained from CMTPL or as may be seen while availing the said
+                            Services). Hence you may be required to pay the amounts, communicated by us or set forth in
+                            the Website, if you wish to avail any Services other than the free Services offered. CMTPL
+                            reserves the right to alter/modify the amounts payable for the Services without any prior
+                            notice. There will be no refund of any amounts paid by you for availing the various Services
+                            offered through the Website, except expressly stated elsewhere CMTPL may offer certain
+                            discounts or other offers for the various Services.</p>
+
+                        <p>The terms and conditions of the offers/discounts shall be clearly set forth in the Website
+                            and the same may be time bound and hence you may not claim any offers/discounts when the
+                            time for the same has lapsed/expired. There are specific services which are offered directly
+                            by third party vendors and the role of CMTPL in such cases is only to post the availability
+                            of such services on our website. CMTPL will not be liable or responsible in any way for such
+                            services or the quality of such services. Any payments being made by users do not accrue to
+                            CMTPL and CMTPL will not entertain any requests for information / clarification regarding
+                            such Services.</p>
+
+                        <h4>6. REGULATION OF USAGE OF WEBSITE</h4>
+                        <p>The User agrees and undertakes not to reverse engineer, modify, copy, distribute, transmit,
+                            display, perform, reproduce, publish, license, create derivative works from, transfer, or
+                            sell any information or software obtained from the Website. You agree not to use the Website
+                            (including, without limitation, any Services you may obtain through your use of the
+                            Website):</p>
+
+                        <ul>
+                            <li>in a manner that violates any local, state, national, foreign, or international statute,
+                                regulation, rule, order, treaty, or other law
+                            </li>
+                            <li>to stalk, harass, or harm another individual or organization</li>
+                            <li>to impersonate any person or entity or otherwise misrepresent your affiliation with a
+                                person or entity.
+                            </li>
+                            <li>to interfere with or disrupt the Website or servers or networks connected to the
+                                Website.
+                            </li>
+                        </ul>
+
+
+                        <p>You agree not to submit any property descriptions, photographs, financial, contact or other
+                            information contained in each Property's data to the Website unless You have acquired
+                            received all necessary rights and authorizations from the owner of such property or the
+                            power-of-attorney holder, including from the photographer and/or copyright owner of any
+                            photographs, to publish and advertise the said property(s) on the Website. Photographs with
+                            any watermark are prohibited.</p>
+
+                        <h4>7. TERMINATION OF REGISTRATION</h4>
+
+                        <p>Without limiting any other remedies, CMTPL may terminate your account if (a) you are found or
+                            suspected to have engaged in fraudulent activity in connection with the use of our Services,
+                            (b) we are of the opinion that you have breached these Terms or such other reasons as deemed
+                            fit by CMTPL with or without assigning any reasons/evidence thereof.</p>
+
+                        <h4>8. INTELLECTUAL PROPERTY RIGHTS</h4>
+                        <p>All logos, brands, trademarks and service marks ("Marks") appearing in Website are the
+                            properties either owned or used under license by CMTPL. All rights accruing from the same,
+                            statutory or otherwise, wholly vest with CMTPL. The access to this Website does not confer
+                            upon you any license or right to use in respect of these Marks and therefore the use of
+                            these Marks in any form or manner, whatsoever is strictly prohibited. Any violation of the
+                            above would constitute an offence under the prevailing laws of India.</p>
+                        <p>CMTPL respects the Intellectual Property Rights of all it has and will continue to adhere to
+                            all the laws applicable in India in this respect. CMTPL shall respect the Intellectual
+                            Property Rights of the users as well as third parties. In a case where a User/s are found to
+                            be using Website as a platform to infringe the Intellectual Property Rights of others, CMTPL
+                            will be free to terminate the said User/s account forthwith without any notice to the
+                            user.</p>
+                        <h4>9. DISCLAIMER OF WARRANTIES</h4>
+                        <p>ALL INFORMATION AND SERVICES PROVIDED BY THE COMPANY THROUGH THE WEBSITE ARE PROVIDED "AS IS"
+                            AND "AS AVAILABLE" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT
+                            NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
+                            TITLE OR NON-INFRINGEMENT, OR ARISING FROM A COURSE OF DEALING, USAGE, OR TRADE PRACTICE.
+                            CMTPL DOES NOT WARRANT THAT THE SERVICES OFFERED ARE FREE OF ERRORS OR MISTAKES. CMTPL DOES
+                            NOT WARRANT OR REPRESENT THAT DEFECTS OR LIMITATIONS IN THE SERVICES WILL BE CORRECTED. NOR
+                            DOES THE CMTPL WARRANT OR REPRESENT THAT THE SERVICES SHALL BE AVAILABLE CONTINUOUSLY.
+                            CERTAIN EXTENUATING CIRCUMSTANCES MAY CAUSE THE SERVICES TO BE INTERRUPTED. CMTPL PROVIDES
+                            NO REMEDIES FOR SUCH SERVICE INTERRUPTIONS. IN ADDITION, CMTPL PROVIDES NO REMEDIES FOR ANY
+                            LOSS OF DATA RESULTING FROM USE OF THE SERVICES.</p>
+
+                        <p>CMTPL SHALL HAVE NO RESPONSIBILITY FOR ANY DAMAGE OF ANY KIND (CONSEQUENTIAL, DIRECT,
+                            INCIDENTAL, HARDWARE, SOFTWARE OR ANY OTHER) DUE TO ACCESS, DOWNLOAD OR USAGE OF CONTENTS
+                            FROM THE WEBSITE. THE CONTENT OF THE WEBSITE COULD INCLUDE INACCURACIES OR TYPOGRAPHICAL
+                            ERRORS. CONTENT IS FREQUENTLY UPDATED WITH REFERENCE TO IMPROVEMENTS AND CORRECTIONS WITHOUT
+                            NOTICE.</p>
+                        <h4>10. INDEMNIFICATION</h4>
+                        <p>You agree to indemnify, defend and hold harmless CMTPL, its officers, directors, employees
+                            and agents from any claim, cost, expense, judgment or other loss incurred due to violation
+                            of the terms and conditions contained in this Terms by you.</p>
+                        <h4>11. LINKS TO THIRD PARTY SITES</h4>
+                        <p>The Website may provide links to web sites and access to content, products and services from
+                            third parties, including users, advertisers, affiliates and sponsors of the Website. You
+                            agree that CMTPL is not responsible for the availability/accuracy of content including but
+                            not limited to opinions, advice, statements and advertisements provided on third party web
+                            sites and you shall bear all risks associated with the use of such content and for acting
+                            upon such content. You are requested to peruse the policies posted by respective web sites
+                            regarding privacy policy and terms of use before usage of the said third party web sites.
+                            CMTPL is not responsible for any loss or damage of any sort you may incur from usage of
+                            contents of third party websites. CMTPL makes no representations or warranties as to the
+                            functioning of any third party website. A link to a third party web site from the Website
+                            does not constitute endorsement by CMTPL of the owner of the other site, the content of its
+                            site, or its products or services.</p>
+                        <h4>12. GOVERNING LAW</h4>
+                        <p>By accessing the Website you agree that the laws prevailing in India shall be the governing
+                            laws in all matters relating to these Terms.</p>
+                        <h4>13. JURISDICTION</h4>
+                        <p>Courts at Uttar Pradesh, India alone shall have the exclusive jurisdiction in all matters
+                            relating to the use of these Terms, irrespective of the territory and jurisdiction of your
+                            access to the Website.</p>
+                        <p>You agree to inform us if you come across any listing or posting that is offensive or
+                            violates our listing policy or infringes any intellectual property rights by sending a mail
+                            to info@101lease.com to enable us to keep the Website working efficiently and in a safe
+                            manner. We reserve the right to take down any posting, listing or information and or limit
+                            or terminate our Services and further take all reasonable technical and legal steps to
+                            prevent the misuse of the Website in keeping with the letter and spirit of these Terms. In
+                            the event you encounter any problems with the use of our Website or Services you are
+                            requested to report the problem by sending an e-mail to info@101lease.com.</p>
+                        <p>The information provided in this Website is based on CMTPL data which is collected from
+                            various publicly known sources viz, websites, documents and maps including CMTPL's
+                            proprietary data resources, and from the inputs of unidentified individuals. It ought to be
+                            considered as a guideline and not as absolutely certain. While care has been taken for
+                            groundwork, no responsibility is accepted for the accuracy of whole or any part. This
+                            information is absolute property of CMTPL. It should not be reproduced in any form, in part
+                            or whole, without prior written permission of CMTPL. The information is provided on an "as
+                            is" and "as available" basis. CMTPL expressly disclaim warranties of any kind, whether
+                            express or implied, including, but not limited to, the implied warranties of
+                            merchantability, fitness for a particular purpose and non-infringement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <hs-footer></hs-footer>
+<?php $__env->stopSection(); ?>
+<?php /*<?php $__env->startSection('script'); ?>*/ ?>
+<?php /*<script type='text/javascript' src="<?php echo e(asset('js/static.min.js')); ?>"></script>*/ ?>
+<?php /*<?php $__env->stopSection(); ?>*/ ?>
+<?php echo $__env->make('master.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

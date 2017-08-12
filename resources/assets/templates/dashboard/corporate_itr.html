@@ -1,0 +1,303 @@
+<div class="card-block post_property">
+    <div class="admin-panel info-admin-panel">
+        <div class="dashboard_title" ng-hide="message">
+            <h2>FY : 2016-17</h2>
+            <a href="#" ui-sref="corporate-itr" class="pull-right doc_close"> <i class="fa fa-close"></i> Close</a>
+        </div>
+        <div class="post-success" ng-show="message">
+            <div>
+                <i class="fa fa-check fa-4x"></i>
+            </div>
+            <h2>Thank you</h2>
+            <p> Your ITR has been saved successfully. <br>
+                You can check and edit your ITR in ITR section.</p>
+            <a href="#" ui-sref="corporate-itr" class="btn btn-info ok"> OK </a>
+        </div>
+        <md-tabs md-dynamic-height="true" md-no-ink-bar="true" md-border-bottom="true" md-center-tabs="true"
+                 md-selected="tabs.selectedIndex" md-no-ink="true" ng-hide="message">
+            <md-tab>
+                <md-tab-label>Company Details</md-tab-label>
+                <md-tab-body>
+                    <form name="DetailsForm" novalidate data-ng-submit="corporateDetails()" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <md-input-container class="md-block">
+                                    <label>Company Name</label>
+                                    <input type="text" name="company_name" data-ng-model="company.name" required>
+                                    <div class="tooltip-error">
+                                        <div ng-messages="DetailsForm.company_name.$error">
+                                            <span ng-message="required">
+                                                <i class="fa fa-info-circle"></i>
+                                                <md-tooltip md-direction="left">
+                                                    Please Enter Your Company Name
+                                                </md-tooltip>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+                            <div class="col-md-4">
+                                <md-input-container class="md-block">
+                                    <label>Contact Number</label>
+                                    <input type="text" name="contact" data-ng-model="company.contact" required>
+                                    <div class="tooltip-error">
+                                        <div ng-messages="DetailsForm.contact.$error">
+                                            <span ng-message="required">
+                                                <i class="fa fa-info-circle"></i>
+                                                <md-tooltip md-direction="left">
+                                                    Please Enter Your Contact Number
+                                                </md-tooltip>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+                            <div class="col-md-4">
+                                <md-input-container class="md-block">
+                                    <label>Bank Name</label>
+                                    <input type="text" name="bank_name" data-ng-model="company.bank_name">
+                                </md-input-container>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <md-input-container class="md-block">
+                                    <label>Bank IFSC</label>
+                                    <input type="text" name="ifsc" data-ng-model="company.ifsc_code">
+                                </md-input-container>
+                            </div>
+                        </div>
+                        <div class="card en_doc mt-2">
+                            <div class="card-block">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <fieldset class="form-group">
+                                            <span>Upload Pan Card</span>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="text" name="pan_no" data-ng-model="company.pan_no"
+                                               placeholder="Pan Number">
+                                    </div>
+                                    <div class="col-md-4 text-center">
+                                        <label class="dp-upload">
+                                            <input type="file" name="pan_image" ng-file-model="company.pan_image" multiple>
+                                            <i class="fa fa-upload"></i> <span>Upload doc</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="doc_img" data-ng-repeat="row in company.pan_image track by $index">
+                                    <img data-ng-src="<%row|corpImageUrl%>" alt="img">
+                                    <a class="down_img" href="<%row|downCorpImage%>" target="_self" download><i class="fa fa-download"></i></a>
+                                    <del-image data-ng-click="remove(row,'pan_image')"></del-image>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card en_doc mt-2">
+                            <div class="card-block">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <fieldset class="form-group">
+                                            <span>Upload Adhaar Card</span>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="text" name="adhar_no" data-ng-model="company.adhar_no"
+                                               placeholder="Adhar Number">
+                                    </div>
+                                    <div class="col-md-4 text-center">
+                                        <label class="dp-upload">
+                                            <input type="file" name="adhar_image" ng-file-model="company.adhar_image"
+                                                   multiple>
+                                            <i class="fa fa-upload"></i> <span>Upload doc</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="doc_img" data-ng-repeat="row in company.adhar_image track by $index">
+                                    <img data-ng-src="<%row|corpImageUrl%>" alt="img">
+                                    <a class="down_img" href="<%row|downCorpImage%>" target="_self" download><i class="fa fa-download"></i></a>
+                                    <del-image data-ng-click="remove(row,'adhar_image')"></del-image>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-block bdr-btm">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <fieldset class="form-group">
+                                        <span>Bank Statement</span>
+                                    </fieldset>
+                                </div>
+
+                                <div class="col-md-4 text-center">
+                                    <label class="dp-upload">
+                                        <input type="file" name="bank_statement" ng-file-model="company.bank_statement" multiple>
+                                        <i class="fa fa-upload"></i> <span>Upload doc</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="doc_img" data-ng-repeat="row in company.bank_statement track by $index">
+                                <img data-ng-src="<%row|corpImageUrl%>" alt="img">
+                                <a class="down_img" href="<%row|downCorpImage%>" target="_self" download><i class="fa fa-download"></i></a>
+                                <del-image data-ng-click="remove(row,'bank_statement')"></del-image>
+                            </div>
+                        </div>
+                        <md-input-container class="md-block">
+                            <label>Company Address</label>
+                            <textarea data-ng-model="company.address" name="address" rows="3"
+                                      md-select-on-focus></textarea>
+                        </md-input-container>
+                        <div class="modal-footer border-top-0 text-center">
+                            <md-progress-linear data-ng-if="activated" class="md-warn" md-mode="buffer"
+                                                value="<% determinateValue %>"
+                                                md-buffer-value="<% determinateValue2 %>"
+                                                data-ng-disable="activated"></md-progress-linear>
+                            <input data-ng-model="company.id" type="hidden" name="id"/>
+                            <save-btn></save-btn>
+                            <next-btn></next-btn>
+                        </div>
+                    </form>
+                </md-tab-body>
+            </md-tab>
+            <md-tab>
+                <md-tab-label>Step 1 <br> <span class="txt">Fill ITR Details</span></md-tab-label>
+                <md-tab-body>
+                    <form name="taxForm" novalidate data-ng-submit="submitITR5()" enctype="multipart/form-data">
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <md-input-container class="md-block">
+                                    <label>Select ITR</label>
+                                    <md-select name="ITR" data-ng-model="company.ITR" disabled>
+                                        <md-option ng-repeat="t in ITR track by $index"
+                                                   ng-value="<%t.value%>">
+                                            <%t.text%>
+                                        </md-option>
+                                    </md-select>
+                                    <div class="tooltip-error">
+                                        <div ng-messages="taxForm.ITR.$error">
+                                            <span ng-message="required">
+                                                <i class="fa fa-info-circle"></i>
+                                                <md-tooltip md-direction="left">
+                                                    Please Select ITR
+                                                </md-tooltip>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+                        </div>
+                        <div class="card en_doc mt-2">
+                            <div class="card-block">
+                                <div class="row bdr-btm">
+                                    <div class="col-md-8">
+                                        <h5>Audit Report</h5>
+                                    </div>
+                                    <upload-btn name="company.audit_report_img"></upload-btn>
+                                    <div class="col-md-12">
+                                        <div class="doc_img" ng-repeat="row in company.audit_report_img track by $index">
+                                            <img data-ng-src="<%row|corpImageUrl%>" alt="img">
+                                            <a class="down_img" href="<%row|downCorpImage%>" target="_self" download><i
+                                                    class="fa fa-download"></i></a>
+                                            <del-image data-ng-click="remove(row,'audit_report_img')"></del-image>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row bdr-btm">
+                                    <div class="col-md-8">
+                                        <h5>Previous Year ITR</h5>
+                                    </div>
+                                    <upload-btn name="company.previous_return_image"></upload-btn>
+                                    <div class="col-md-12">
+                                        <div class="doc_img" ng-repeat="row in company.previous_return_image track by $index">
+                                            <img data-ng-src="<%row|corpImageUrl%>" alt="img">
+                                            <a class="down_img" href="<%row|downCorpImage%>" target="_self" download><i
+                                                    class="fa fa-download"></i></a>
+                                            <del-image data-ng-click="remove(row,'previous_return_image')"></del-image>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row bdr-btm">
+                                    <div class="col-md-8">
+                                        <h5>Form 26AS</h5>
+                                        <p>Form 26AS outlines tax deducted form your income by the persons responsible
+                                            to pay the income. Same can be downloaded form the website <a
+                                                    href="www.incometaxindiaefiling.gov.in" target="_blank">'www.incometaxindiaefiling.gov.in'</a>
+                                        </p>
+                                    </div>
+                                    <upload-btn name="company.form_26A"></upload-btn>
+                                    <div class="col-md-12">
+                                        <div class="doc_img" ng-repeat="row in company.form_26A track by $index">
+                                            <img data-ng-src="<%row|corpImageUrl%>" alt="img">
+                                            <a class="down_img" href="<%row|downCorpImage%>" target="_self" download><i
+                                                    class="fa fa-download"></i></a>
+                                            <del-image data-ng-click="remove(row,'form_26A')"></del-image>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row bdr-btm">
+                                    <div class="col-md-8">
+                                        <h5>Audited Financial Documents</h5>
+                                    </div>
+                                    <upload-btn name="company.financial_documents"></upload-btn>
+                                    <div class="col-md-12">
+                                        <div class="doc_img" ng-repeat="row in company.financial_documents track by $index">
+                                            <img data-ng-src="<%row|corpImageUrl%>" alt="img">
+                                            <a class="down_img" href="<%row|downCorpImage%>" target="_self" download><i
+                                                    class="fa fa-download"></i></a>
+                                            <del-image data-ng-click="remove(row,'financial_documents')"></del-image>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row bdr-btm">
+                                    <div class="col-md-8">
+                                        <h5>Draft Computation of Income</h5>
+                                    </div>
+                                    <upload-btn name="company.income_computation"></upload-btn>
+                                    <div class="col-md-12">
+                                        <div class="doc_img" ng-repeat="row in company.income_computation track by $index">
+                                            <img data-ng-src="<%row|corpImageUrl%>" alt="img">
+                                            <a class="down_img" href="<%row|downCorpImage%>" target="_self" download><i
+                                                    class="fa fa-download"></i></a>
+                                            <del-image data-ng-click="remove(row,'income_computation')"></del-image>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row bdr-btm">
+                                    <div class="col-md-8">
+                                        <h5>Change in Share Holding</h5>
+                                    </div>
+                                    <upload-btn name="company.share_holders"></upload-btn>
+                                    <div class="col-md-12">
+                                        <div class="doc_img" ng-repeat="row in company.share_holders track by $index">
+                                            <img data-ng-src="<%row|corpImageUrl%>" alt="img">
+                                            <a class="down_img" href="<%row|downCorpImage%>" target="_self" download><i
+                                                    class="fa fa-download"></i></a>
+                                            <del-image data-ng-click="remove(row,'share_holders')"></del-image>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer border-top-0 text-center pt-0">
+                            <md-progress-linear data-ng-if="activated" class="md-warn" md-mode="buffer"
+                                                value="<% determinateValue %>"
+                                                md-buffer-value="<% determinateValue2 %>"
+                                                data-ng-disable="activated"></md-progress-linear>
+                            <input data-ng-model="company.id" type="hidden" name="id"/>
+                            <a class="btn btn-rounded btn-lg waves-effect waves-light mt-1"
+                               data-ng-click="backTab()">Back
+                            </a>
+                            <next-btn></next-btn>
+                            <save-btn></save-btn>
+                        </div>
+                    </form>
+                </md-tab-body>
+            </md-tab>
+            <itr-mode></itr-mode>
+        </md-tabs>
+    </div>
+</div>

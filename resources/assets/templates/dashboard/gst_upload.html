@@ -1,0 +1,62 @@
+<div class="card-block post_property">
+    <div class="admin-panel info-admin-panel">
+        <div class="dashboard_title" ng-hide="message">
+            <h2>FY : 2016-17</h2>
+            <a href="#" ui-sref="gst-files" class="pull-right doc_close"> <i class="fa fa-close"></i> Close</a>
+        </div>
+        <div class="post-success" ng-show="message">
+            <div>
+                <i class="fa fa-check fa-4x"></i>
+            </div>
+            <h2>Thank you</h2>
+            <p> Your ITR has been saved successfully. <br>
+                You can check and edit your ITR in ITR section.</p>
+            <a href="#" ui-sref="gst-files" class="btn btn-info ok"> OK </a>
+        </div>
+                    <form name="uploadGSTForm" novalidate data-ng-submit="uploadGST()" enctype="multipart/form-data">
+                        <div class="card en_doc mt-2">
+                            <div class="card-block">
+                                <div class="row bdr-btm">
+                                    <div class="col-md-8">
+                                        <h5>Upload GST Files</h5>
+                                    </div>
+                                    <upload-btn name="gst.gst_files"></upload-btn>
+                                    <div class="col-md-12">
+                                        <div class="doc_img" ng-repeat="row in gst.gst_files track by $index">
+                                            <img data-ng-src="<%row|gstImageUrl%>" alt="img">
+                                            <a class="down_img" href="<%row|downGSTImg%>" target="_self" download><i
+                                                    class="fa fa-download"></i></a>
+                                            <del-image data-ng-click="remove(row,'gst_files')"></del-image>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       <!-- <div class="modal-footer border-top-0 text-center pt-0">
+                            <md-progress-linear data-ng-if="activated" class="md-warn" md-mode="buffer"
+                                                value="<% determinateValue %>"
+                                                md-buffer-value="<% determinateValue2 %>"
+                                                data-ng-disable="activated"></md-progress-linear>
+
+                            <input data-ng-model="itr.id" type="hidden" name="id"/>
+                            <button class="btn btn-rounded btn-lg waves-effect waves-light mt-1"
+                                    data-ng-disabled="activated">Upload
+                            </button>
+                        </div>-->
+
+                        <div class="modal-footer border-top-0 text-center pt-0">
+                            <md-progress-linear data-ng-if="activated" class="md-warn" md-mode="buffer"
+                                                value="<% determinateValue %>"
+                                                md-buffer-value="<% determinateValue2 %>"
+                                                data-ng-disable="activated"></md-progress-linear>
+                            <input data-ng-model="itr.id" type="hidden" name="id"/>
+                            <save-btn></save-btn>
+                           <!-- <a class="btn btn-rounded btn-lg waves-effect waves-light mt-1"
+                               data-ng-click="backTab()">Back
+                            </a>-->
+                         <!--   <next-btn></next-btn>
+                            <save-btn></save-btn>-->
+                        </div>
+                    </form>
+    </div>
+</div>

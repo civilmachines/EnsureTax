@@ -1,0 +1,229 @@
+
+<div class="card-block post_property">
+    <div class="admin-panel info-admin-panel">
+
+        <div class="dashboard_title" ng-hide="message">
+            <h2>Remesh (ITR2)</h2>
+            <a href="#" ui-sref="itr" class="pull-right doc_close"> <i class="fa fa-close"></i> Close</a>
+        </div>
+
+
+
+        <div class="card en_doc mt-1">
+            <div class="card-header">
+                Profile
+            </div>
+            <div class="card-block admin_view">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Name</label>
+                        <h4>Rajesh Kumar</h4>
+                         </div>
+                    <div class="col-md-4">
+                      <label>Email</label>
+                        <h4>rajesh@gmail.com</h4>
+                    </div>
+                    <div class="col-md-4">
+                      <label>Mobile</label>
+                        <h4>9966887788 </h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>IFSC Code</label>
+                        <h4>Rajesh Kumar</h4>
+                         </div>
+                    <div class="col-md-4">
+                      <label>Residential Status</label>
+                        <h4>rajesh@gmail.com</h4>
+                    </div>
+                    <div class="col-md-4">
+                      <label>Employer Category</label>
+                        <h4>9966887788 </h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label>Residence Address </label>
+                        <h4>B-816, Advant Navis Business Park, Sector 142, Noida UP - 201205</h4>
+                         </div>
+                   
+                </div>
+                
+                
+                <h3>Attach Documents</h3>
+                <hr>
+                <div class="down_img_sec" ng-repeat="row in itr.form_16 track by $index">
+                <div class="doc_img">
+                    <img data-ng-src="<%row|imageUrl%>" alt="img">
+                    <a class="down_img" href="<%row|imageUrl%>" target="_self" download><i class="fa fa-download"></i></a>
+                </div>
+                    <p>Pan Card</p>
+            </div>
+            </div>
+        </div>
+
+
+         
+        
+        
+        
+        
+        
+        
+       
+
+                        <div class="card en_doc mt-2">
+                            <div class="card-block">
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        <h6>1. Income Under the Head Salary</h6>
+                                        <p><strong>FORM 16</strong> - Form 16 is provided by employer containing the computation of income and tax deductions</p>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" name="form_16_amnt" data-ng-model="itr.form_16_amnt"
+                                               placeholder="Amount">
+                                    </div>
+                                    
+                                </div>
+                                <div class="doc_img" ng-repeat="row in itr.form_16 track by $index">
+                                    <img data-ng-src="<%row|imageUrl%>" alt="img">
+                                   <a class="down_img" data-ng-click="remove(row, 'form_16')"><i class="fa fa-download"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card en_doc mt-2">
+                            <div class="card-block">
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        <h6>2. Income from One House Property</h6>
+                                        <p>Loan & Interest Certificate <br> (House property income pertains to rental income)</p>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" name="income_loss" data-ng-model="itr.house_income" placeholder="Amount">
+                                    </div>
+                                    
+                                </div>
+                                <div class="doc_img" ng-repeat="row in itr.loan_certificate track by $index">
+                                    <img data-ng-src="<%row|imageUrl%>" alt="img">
+                                     <a class="down_img" data-ng-click="remove(row, 'form_16')"><i class="fa fa-download"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card en_doc mt-2">
+                            <div class="card-block">
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        <h6>3. Income from Other Sources</h6>
+                                        <p>Interest Certificate</p>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" name="interest_income" data-ng-model="itr.interest_income"
+                                               placeholder="Amount">
+                                    </div>
+                                   
+                                </div>
+                                <div class="doc_img" ng-repeat="row in itr.interest_certificate track by $index">
+                                    <img data-ng-src="<%row|imageUrl%>" alt="img">
+                                     <a class="down_img" data-ng-click="remove(row, 'form_16')"><i class="fa fa-download"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card en_doc mt-2">
+                            <div class="card-block">
+                                <h6>4. Details of Deduction to be Claimed Along with Proofs (If Any)</h6>
+                                <br>
+                                <div class="row bdr-btm">
+                                    <div class="col-md-12">
+                                        <h5>Deduction to be Claimed u/s 80C</h5>
+                                        <p>Deduction in respect of life insurance premia, installment paid for the purpose of purchase or construction of a residential house property, contribution to provident fund, contribution to public provident fund, contribution to fixed deposit with a scheduled bank for 5 years or more, subscription to certain equity shares or debentures, etc</p>
+
+                                    </div>
+                                    
+                                    <div class="col-md-12">
+                                        <div class="doc_img" ng-repeat="row in itr.claim_80C track by $index">
+                                            <img data-ng-src="<%row|imageUrl%>" alt="img">
+                                             <a class="down_img" data-ng-click="remove(row, 'form_16')"><i class="fa fa-download"></i></a>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row bdr-btm">
+                                    <div class="col-md-12">
+                                        <h5>Deduction to be Claimed u/s 80D</h5>
+                                        <p>Deduction in respect of health insurance premia</p>
+                                    </div>
+                                    
+                                    <div class="col-md-12">
+                                        <div class="doc_img" ng-repeat="row in itr.claim_80D track by $index">
+                                            <img data-ng-src="<%row|imageUrl%>" alt="img">
+                                             <a class="down_img" data-ng-click="remove(row, 'form_16')"><i class="fa fa-download"></i></a>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row bdr-btm">
+                                    <div class="col-md-12">
+                                        <h5>Deduction to be Claimed u/s 80G</h5>
+                                        <p>Deduction in respect of donations to certain funds, charitable institutions, etc</p>
+                                    </div>
+                                    
+                                    <div class="col-md-12">
+                                        <div class="doc_img" ng-repeat="row in itr.claim_80G track by $index">
+                                            <img data-ng-src="<%row|imageUrl%>" alt="img">
+                                             <a class="down_img" data-ng-click="remove(row, 'form_16')"><i class="fa fa-download"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row bdr-btm">
+                                    <div class="col-md-12">
+                                        <h5>Other Deduction</h5>
+                                        <p>Deduction in respect of interest on deposits in savings account</p>
+                                    
+                                        <div class="doc_img" ng-repeat="row in itr.other_deduction track by $index">
+                                            <img data-ng-src="<%row|imageUrl%>" alt="img">
+                                            <a class="down_img" data-ng-click="remove(row, 'form_16')"><i class="fa fa-download"></i></a>
+                                        </div>
+                                    </div>
+                                </div>    
+
+
+                                <div class="row bdr-btm">  
+                                    <div class="col-md-12">
+                                        <h5>Paid Tax Challan (If Any)</h5>
+                                     
+                                        <div class="doc_img" ng-repeat="row in itr.tax_challan track by $index">
+                                            <img data-ng-src="<%row|imageUrl%>" alt="img">
+                                             <a class="down_img" data-ng-click="remove(row, 'form_16')"><i class="fa fa-download"></i></a>
+                                        </div>
+                                    </div>
+                                </div>     
+
+                                <div class="row bdr-btm">   
+                                    <div class="col-md-12">
+                                        <h5>Form 26AS</h5>
+                                        <p>Form 26AS outlines tax deducted form your income by the persons responsible to pay the income. Same can be downloaded form the website <a href="www.incometaxindiaefiling.gov.in" target="_blank">'www.incometaxindiaefiling.gov.in'</a></p>
+                                     
+                                        <div class="doc_img" ng-repeat="row in itr.form_26A track by $index">
+                                            <img data-ng-src="<%row|imageUrl%>" alt="img">
+                                             <a class="down_img" data-ng-click="remove(row, 'form_16')"><i class="fa fa-download"></i></a>
+                                        </div>
+                                    </div>
+                                </div>   
+
+                            </div>
+                        </div>
+
+
+
+
+
+
+    </div>
+</div>

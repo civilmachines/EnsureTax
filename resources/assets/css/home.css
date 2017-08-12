@@ -1,0 +1,300 @@
+/*----------------- hero banner ----------------------------*/
+.hero_banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: url(../images/bnr.jpg);
+    background-position: center;
+    height: 550px;
+    background-size: cover;
+}
+.hero_banner::before {
+    content: '';
+    height: inherit;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.71);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    z-index: 1;
+    display: block;
+    padding-top:250px;
+}
+
+.hero_banner .btn{
+    padding: 15px 40px;
+    font-size: 22px;
+    text-transform: none;}
+.hero_banner .btn-default{
+    color: #66c104 !important;
+    border: solid 1px #66c104;
+    background: rgba(255, 255, 255, 0);}
+.hero_banner .btn-default:hover{
+    color: #66c104 !important;
+    border: solid 1px #66c104;
+    background: rgba(255, 255, 255, 0) !important;}
+
+.carousel{ z-index:1; text-align:center;}
+.carousel-cap{
+    padding: 150px 0px 80px;
+    width:70%;
+    text-align: center;
+    margin: 0 auto;}
+
+.carousel-cap h1{ margin-bottom:1.5rem;}
+.carousel-cap p {
+    line-height: 1.5;
+    margin-bottom: 2.5rem;
+    font-size: 1.2rem;}
+.carousel-cap h1, .carousel-cap p{font-family: 'Lato', sans-serif;  color:#fff;}
+
+.carousel-indicators{top: 300px; bottom: inherit;}
+.carousel-indicators li {
+    width: 15px !important;
+    height: 15px !important;
+    background-color: #d8d8d8;
+    border-radius: 0 !important;
+    transform: rotate(45deg);
+    max-width: 15px !important;
+    margin: 5px;}
+.carousel-indicators .active {
+    margin: 5px;
+    background-color: #66c104 !important;
+}
+
+
+
+/*----------------- end hero banner ----------------------------*/
+
+/*----------------- Service ----------------------------*/
+.btn-success {
+    background: #66c104;
+}
+.btn-primary{
+    background: #0099e5;
+}
+.green {
+    background-color: #4CAF50 !important;
+}
+.btn-success:hover{ background: #66c104 !important; color: #fff !important;}
+.tax_type_warp .section-title{ margin-bottom: 5px;}
+.tax_type_warp .section-title h2:after{
+    content: '';
+    display: block;
+    border-bottom: solid 3px #66c104;
+    width: 150px;
+    margin: 0 auto;
+    margin-top: 10px;}
+
+.tax_type .card-body{
+    padding:2rem;}
+.tax_type h3{
+    font-size: 1.4rem;
+    color: #ff8700;}
+.tax_type span{
+    font-size: 1.7rem;
+    color: #000;
+    font-weight: bold; display: block; margin-bottom: 1rem;}
+
+.tax_type span small{
+    display: block;
+    font-size: 12px;
+    color: #53a000;}
+
+.tax_type .btn{ width: 50%; margin-top: 0.5rem;}
+.tax_type_warp small{ color:#949090;}
+.service{}
+.service .service-wrapper {
+    border: 1px solid #CCC;
+    border-radius: 3px;
+}
+.service h2 {
+    font-size: 2rem;
+    color: #4a4a4a;
+    margin-bottom: 2rem;
+}
+.service .service-item  {
+    padding: 25px 15px 25px 20px;
+    border-bottom: 1px solid #CCC;
+    width: 100%;
+}
+.service .service-item:last-child {
+    border-bottom: 0;
+}
+.service a.service-item {
+    display: block;
+    color: #939393;
+}
+.service .service-item:nth-child(even) {
+    background: #EDF2F2;
+}
+.service .service-item h4{
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: #ff8700;
+    margin-bottom: 0;}
+.service .service-item p{
+    margin-bottom: 0;
+    color: #868686;
+    font-weight: 100 !important;
+    font-size: 14px;
+    margin-top: 5px;}
+.service .service-item .btn{ width: 150px;}
+
+.service .service-item .job-location {
+    font-size: 1.2rem;
+    color: #080808;}
+.service .service-item .job-location p{
+    font-size: 1rem;
+    color: #66c104;}
+
+/*----------------- end Service ----------------------------*/
+
+/*----------------- Additing ----------------------------*/
+.additing .tittle{
+    line-height: 1.5;
+    color: #b7b6b6;
+    font-size: 1rem;}
+.additing .featured-icon-png {
+    text-align: center;
+    border: 1px solid #DDDDDD;
+    padding: 40px 30px 30px;
+    border-radius: 5px;
+    min-height: 27.5rem;
+}
+.additing .featured-icon-png img {
+    display: inline;
+    max-width: 30%;
+}
+.additing .featured-icon-png h5 {
+    font-size: 20px;
+    margin: 20px 0 17px;
+}
+.additing .featured-icon-png a {
+    border-radius: 3px;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 2px;
+    padding: 12px 15px;
+    border: 2px solid #24AE5F;
+    color: #24AE5F;
+    font-weight: 600;
+    line-height: 1;
+    display: inline-block;
+    margin: 18px 0 8px;
+}
+.additing .featured-icon-png li{
+    line-height: 1.5;
+    color: #b7b6b6;
+    font-size: 1rem;}
+/*----------------- end Service ----------------------------*/
+
+/*----------------- partner ----------------------------*/
+.partner{}
+.partner h2{ font-size: 1.5rem;}
+.partner .carousel-indicators{bottom: -60px;}
+
+.partner .prev{
+    position: absolute;
+    left: -2%;
+    top: 21%;
+    font-size: 2rem;
+    color: #ccc;}
+.partner .next{
+    position: absolute;
+    right: -2%;
+    top: 21%;
+    font-size: 2rem;
+    color: #ccc;}
+
+/*----------------- end partner ----------------------------*/
+
+
+.tag_line {
+    padding: 2.2rem 0;
+    background: url(../images/11.jpg) fixed;
+    background-blend-mode: overlay;
+    text-align: center;
+    position: relative;
+    background-size: cover;
+    background-position: 100%;
+}
+.tag_line:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(27, 134, 1, 0.71);
+}
+.tag_line h2 {
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 400;
+}
+.tag_line p {
+    color: #c1bfbd;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+
+/*----------------- footer --------------------------*/
+
+@media(max-width:768px) {
+    .hero_banner {
+        height: 370px;
+    }
+    .mb-3 {
+        margin-bottom: 2rem !important;
+    }
+    .mt-4 {
+        margin-top: 2.5rem !important;
+    }
+    .pt-5{ padding-top:3rem !important;}
+    .pb-6{ padding-bottom:3rem !important;}
+
+    .tag_line h2 {
+        font-size: 1.5rem;
+    }
+    .carousel-cap{
+        padding: 100px 0px 20px;
+        width:100%;}
+    .carousel-cap h1 {
+        font-size: 1.1rem !important;
+        margin-bottom: 0.5rem;
+    }
+    .carousel-cap p {
+        line-height: 1.7;
+        margin-bottom: 0.5rem;
+        font-size: 12px;
+    }
+    .hero_banner .btn {
+        padding: 10px 15px;
+        font-size: 18px;
+    }
+    .service h2 {
+        font-size: 1.5rem;
+        color: #4a4a4a;
+        margin-bottom: 1rem;
+    }
+    .service .service-item{text-align: center;}
+
+    .additing .featured-icon-png{ margin-bottom: 1rem;}
+}
+@media (min-width: 400px) and (max-width:768px) {
+
+}
+@media(max-width:400px) {
+    .hero_banner {
+        height: 300px;
+    }
+}

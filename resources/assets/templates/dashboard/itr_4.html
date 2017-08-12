@@ -1,0 +1,293 @@
+<md-tab ng-disabled="tabs.disable">
+    <md-tab-label>Next Step <br> <span class="txt"> ITR 3 </span></md-tab-label>
+    <md-tab-body>
+        <form name="ITR3Form" novalidate data-ng-submit="submitITR3()">
+            <hr>
+
+            <div class="card en_doc mt-2">
+                <div class="card-block bdr-btm">
+                    <h6>Income Under the Head Business & Profession</h6>
+                    <div class="card-block bdr-btm">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <h6>Nature of Business</h6>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" name="business_nature" data-ng-model="itr.business_nature"
+                                       placeholder="Business Nature">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-block bdr-btm">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h6>Complete Financial</h6>
+                            </div>
+                            <upload-btn name="itr.complete_finance_image"></upload-btn>
+
+                        </div>
+                        <div class="doc_img" ng-repeat="row in itr.complete_finance_image track by $index">
+                            <img data-ng-src="<%row|imageUrl%>" alt="img">
+                            <a class="down_img" href="<%row|downloadImg%>" target="_self" download><i class="fa fa-download"></i></a>
+                            <del-image data-ng-click="remove(row,'complete_finance_image')"></del-image>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card en_doc mt-2">
+                <div class="card-block bdr-btm">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <fieldset class="form-group">
+                                <input type="checkbox" id="co_owner_prop" data-ng-model="itr.co_owned_prop">
+                                <label for="co_owner_prop">Income from House Property </label>
+                            </fieldset>
+                        </div>
+                        <upload-btn name="itr.co_owned_prop_image" data-ng-if="itr.co_owned_prop"></upload-btn>
+                    </div>
+                    <div class="doc_img" data-ng-if="itr.co_owned_prop" ng-repeat="row in itr.co_owned_prop_image track by $index">
+                        <img data-ng-src="<%row|imageUrl%>" alt="img">
+                        <a class="down_img" href="<%row|downloadImg%>" target="_self" download><i class="fa fa-download"></i></a>
+                        <del-image data-ng-click="remove(row,'co_owned_prop_image')"></del-image>
+                    </div>
+                </div>
+
+                <div class="card-block bdr-btm">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <fieldset class="form-group">
+                                <input type="checkbox" id="partner_firm" data-ng-model="itr.partner_firms">
+                                <label for="partner_firm">Income from Partner's Firms</label>
+                            </fieldset>
+                        </div>
+                        <upload-btn name="itr.partner_firm_image" data-ng-if="itr.partner_firms"></upload-btn>
+                    </div>
+                    <div class="doc_img" data-ng-if="itr.partner_firm_image" ng-repeat="row in itr.partner_firm_image track by $index">
+                        <img data-ng-src="<%row|imageUrl%>" alt="img">
+                        <a class="down_img" href="<%row|downloadImg%>" target="_self" download><i class="fa fa-download"></i></a>
+                        <del-image data-ng-click="remove(row,'partner_firm_image')"></del-image>
+                    </div>
+                </div>
+                <div class="card-block bdr-btm">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <fieldset class="form-group">
+                                <input type="checkbox" id="capital_gain" data-ng-model="itr.capital_gains">
+                                <label for="capital_gain">Income from Capital Gains</label>
+                            </fieldset>
+                        </div>
+                        <upload-btn name="itr.capital_gain_image" data-ng-if="itr.capital_gains"></upload-btn>
+                    </div>
+                    <div class="doc_img" data-ng-if="itr.capital_gains" ng-repeat="row in itr.capital_gain_image track by $index">
+                        <img data-ng-src="<%row|imageUrl%>" alt="img">
+                        <a class="down_img" href="<%row|downloadImg%>" target="_self" download><i class="fa fa-download"></i></a>
+                        <del-image data-ng-click="remove(row,'capital_gain_image')"></del-image>
+                    </div>
+                </div>
+                <div class="card-block bdr-btm">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <fieldset class="form-group">
+                                <input type="checkbox" id="othr_source_income"
+                                       data-ng-model="itr.other_source_income">
+                                <label for="othr_source_income">Income from Other Sources</label>
+                            </fieldset>
+                        </div>
+                        <upload-btn name="itr.othr_source_incm_image" data-ng-if="itr.other_source_income"></upload-btn>
+                    </div>
+                    <div class="doc_img" data-ng-if="itr.other_source_income" ng-repeat="row in itr.othr_source_incm_image track by $index">
+                        <img data-ng-src="<%row|imageUrl%>" alt="img">
+                        <a class="down_img" href="<%row|downloadImg%>" target="_self" download><i class="fa fa-download"></i></a>
+                        <del-image data-ng-click="remove(row,'othr_source_incm_image')"></del-image>
+                    </div>
+                </div>
+                <div class="card-block bdr-btm">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <fieldset class="form-group">
+                                <input type="checkbox" id="outside_incomes"
+                                       data-ng-model="itr.outside_income">
+                                <label for="outside_incomes">Income from Outside India</label>
+                            </fieldset>
+                        </div>
+                        <upload-btn name="itr.outside_income_image" data-ng-if="itr.outside_income"></upload-btn>
+                    </div>
+                    <div class="doc_img" data-ng-if="itr.outside_income" ng-repeat="row in itr.outside_income_image track by $index">
+                        <img data-ng-src="<%row|imageUrl%>" alt="img">
+                        <a class="down_img" href="<%row|downloadImg%>" target="_self" download><i class="fa fa-download"></i></a>
+                        <del-image data-ng-click="remove(row,'outside_income_image')"></del-image>
+                    </div>
+                </div>
+            </div>
+            <div class="card en_doc mt-2">
+                <div class="card-block bdr-btm">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <fieldset class="form-group">
+                                <input type="checkbox" id="other_cntry_tax"
+                                       data-ng-model="itr.other_cntry_tax"
+                                       name="partner">
+                                <label for="other_cntry_tax">Relief of Tax Paid (If Paid in Other Country)</label>
+                            </fieldset>
+                        </div>
+                        <upload-btn name="itr.othr_cntry_tax_paid_img" name="itr.othr_cntry_tax_paid_img" data-ng-if="itr.other_cntry_tax"></upload-btn>
+                    </div>
+                    <div class="doc_img" data-ng-if="itr.other_cntry_tax" ng-repeat="row in itr.othr_cntry_tax_paid_img track by $index">
+                        <img data-ng-src="<%row|imageUrl%>" alt="img">
+                        <a class="down_img" href="<%row|downloadImg%>" target="_self" download><i class="fa fa-download"></i></a>
+                        <del-image data-ng-click="remove(row,'othr_cntry_tax_paid_img')"></del-image>
+                    </div>
+                </div>
+
+                <div class="card-block bdr-btm">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <fieldset class="form-group">
+                                <input type="checkbox" id="audit_report"
+                                       data-ng-model="itr.audit_report"
+                                       name="partner">
+                                <label for="audit_report">Tax Audit Report</label>
+                            </fieldset>
+                            <h6></h6>
+                        </div>
+                        <upload-btn name="itr.audit_report_img" data-ng-if="itr.audit_report"></upload-btn>
+                    </div>
+                    <div class="doc_img" data-ng-if="itr.audit_report" ng-repeat="row in itr.audit_report_img track by $index">
+                        <img data-ng-src="<%row|imageUrl%>" alt="img">
+                        <a class="down_img" href="<%row|downloadImg%>" target="_self" download><i class="fa fa-download"></i></a>
+                        <del-image data-ng-click="remove(row,'audit_report_img')"></del-image>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card f-2 mt-2">
+                <div class="card-block bdr-btm">
+                    <h6>If Total Income Exceeds INR 50 Lakhs</h6>
+                    <div class="card-block bdr-btm">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h6><fieldset class="form-group">
+                                    <input type="checkbox" id="immovable_assets"
+                                           data-ng-model="itr.immovable_assets">
+                                    <label for="immovable_assets">Immovable Assets</label>
+                                </fieldset></h6>
+                            </div>
+                            <upload-btn name="itr.immovable_asset_image" data-ng-if="itr.immovable_assets"></upload-btn>
+                        </div>
+                        <div class="doc_img" data-ng-if="itr.immovable_assets" ng-repeat="row in itr.immovable_asset_image track by $index">
+                            <img data-ng-src="<%row|imageUrl%>" alt="img">
+                            <a class="down_img" href="<%row|downloadImg%>" target="_self" download><i class="fa fa-download"></i></a>
+                            <del-image data-ng-click="remove(row,'immovable_asset_image')"></del-image>
+                        </div>
+                    </div>
+                    <div class="card-block bdr-btm">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h6><fieldset class="form-group">
+                                    <input type="checkbox" id="assets_partner"
+                                           data-ng-model="itr.assets_partner"
+                                           name="partner">
+                                    <label for="assets_partner">Partner in the Firm</label>
+                                </fieldset></h6>
+                            </div>
+                            <upload-btn name="itr.assets_partner_image" data-ng-if="itr.assets_partner"></upload-btn>
+                        </div>
+                        <div class="doc_img" data-ng-if="itr.assets_partner" ng-repeat="row in itr.assets_partner_image track by $index">
+                            <img data-ng-src="<%row|imageUrl%>" alt="img">
+                            <a class="down_img" href="<%row|downloadImg%>" target="_self" download><i class="fa fa-download"></i></a>
+                            <del-image data-ng-click="remove(row,'assets_partner_image')"></del-image>
+                        </div>
+                    </div>
+                    <div class="card-block bdr-btm">
+                        <h6> Movable Assets </h6>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <md-input-container class="md-block">
+                                    <label>Jewellery Amount</label>
+                                    <input type="text" name="jewellery_amnt" data-ng-model="itr.jewellery_amnt">
+                                </md-input-container>
+                            </div>
+                            <div class="col-md-4">
+                                <md-input-container class="md-block">
+                                    <label>Vehicles Amount</label>
+                                    <input type="text" name="paintings_amnt" data-ng-model="itr.paintings_amnt">
+                                </md-input-container>
+                            </div>
+                            <div class="col-md-4">
+                                <md-input-container class="md-block">
+                                    <label>Paintings Amount</label>
+                                    <input type="text" name="vehicles_amnt" data-ng-model="itr.vehicles_amnt">
+                                </md-input-container>
+                            </div>
+                            <div class="col-md-4">
+                                <md-input-container class="md-block">
+                                    <label>Amount in Bank</label>
+                                    <input type="text" name="bank_amnt" data-ng-model="itr.bank_amnt">
+                                </md-input-container>
+                            </div>
+                            <div class="col-md-4">
+                                <md-input-container class="md-block">
+                                    <label>Shares & Securities</label>
+                                    <input type="text" name="share_amnt" data-ng-model="itr.share_amnt">
+                                </md-input-container>
+                            </div>
+                            <div class="col-md-4">
+                                <md-input-container class="md-block">
+                                    <label>Loans & Advances Given</label>
+                                    <input type="text" name="loan_amnt" data-ng-model="itr.loan_amnt">
+                                </md-input-container>
+                            </div>
+                            <div class="col-md-4">
+                                <md-input-container class="md-block">
+                                    <label>In-Hand Cash</label>
+                                    <input type="text" name="cash_amnt" data-ng-model="itr.cash_amnt">
+                                </md-input-container>
+                            </div>
+                            <div class="col-md-4">
+                                <md-input-container class="md-block">
+                                    <label>Any Other Liabilities (In INR)</label>
+                                    <input type="text" name="other_liability_amnt"
+                                           data-ng-model="itr.other_liability_amnt">
+                                </md-input-container>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card f-2 mt-2">
+                <div class="card-block bdr-btm">
+                    <h6>Details of Brought Forward Losses</h6>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <md-input-container class="md-block">
+                                <label>Date of Filing Return</label>
+                                <md-datepicker ng-model="itr.return_filing_date"
+                                               md-placeholder="Enter date"></md-datepicker>
+                            </md-input-container>
+                        </div>
+                        <div class="col-md-6">
+                            <md-input-container class="md-block">
+                                <label>Forward Loss of Respective Heads</label>
+                                <input type="text" name="loss_amnt" data-ng-model="itr.loss_amnt">
+                            </md-input-container>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer border-top-0 text-center pt-0">
+                <md-progress-linear data-ng-if="activated" class="md-warn" md-mode="buffer"
+                                    value="<% determinateValue %>"
+                                    md-buffer-value="<% determinateValue2 %>"
+                                    data-ng-disable="activated"></md-progress-linear>
+                <input data-ng-model="itr.id" type="hidden" name="id"/>
+                <a class="btn btn-rounded btn-lg waves-effect waves-light mt-1"
+                   data-ng-click="backTab()">Back
+                </a>
+                <save-btn></save-btn>
+            </div>
+        </form>
+    </md-tab-body>
+</md-tab>

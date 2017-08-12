@@ -1,0 +1,783 @@
+/*----------------- hero banner ----------------------------*/
+.hero_banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: url(../images/101housing/113.jpg);
+    background-position: center;
+    height: 450px;
+    background-size: cover;
+}
+
+.hero_banner.seller_bnr {
+    background: url(../images/101housing/112.jpg) !important;
+    background-position: center !important;
+    background-size: cover !important;
+}
+
+.hero_banner::before {
+    content: '';
+    height: inherit;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.52);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    z-index: 1;
+    display: block;
+}
+
+.hero_banner .buyer_head {
+    -webkit-transition: .5s ease;
+    transition: .5s ease;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 70%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    margin-top: 7rem;
+    text-align: center;
+}
+
+.hero_banner.show_search .buyer_head {
+    margin-top: -20rem;
+}
+
+.hero_banner .buyer_head h1 {
+    font-family: 'Comfortaa', cursive;
+    font-size: 2.5rem;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 1.2rem;
+    width: 80%;
+
+}
+
+.hero_banner .buyer_head p {
+    line-height: 2;
+    text-align: center;
+    font-family: 'Comfortaa', cursive;
+    color: #fff;
+}
+
+.hero_banner .caption {
+    -webkit-transition: .5s ease;
+    transition: .5s ease;
+    position: absolute;
+    right: 15%;
+    bottom: -354px;
+    left: 15%;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+}
+
+.hero_banner.show_search .caption {
+    bottom: 20px;
+}
+
+.hero_banner .caption h1 {
+    font-size: 52px;
+}
+
+.hero_banner .caption p {
+    font-size: 20px;
+    line-height: 30px;
+    margin: 0 0 30px;
+    font-weight: 400;
+    text-align: center;
+    color: #fff;
+}
+
+.hero_banner.res .caption .btn-group.p_type .btn {
+    overflow: visible;
+    padding: 0.6rem 1rem;
+    background: rgba(0, 0, 0, 0.37);
+    border: solid 1px #ffc9c9;
+}
+
+.hero_banner.res .caption .btn-group.p_type .btn.active {
+    background-color: #db0000 !important;
+    position: relative
+}
+
+.hero_banner.res .caption .btn-group.p_type .btn.active:before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -17px;
+    width: 1rem;
+    height: 1rem;
+    border: solid 8px transparent;
+    border-top-color: #ffffff;
+    left: 39%;
+}
+
+.hero_banner.res .caption .btn-group.p_type .btn.active:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -16px;
+    width: 1rem;
+    height: 1rem;
+    border: solid 8px transparent;
+    border-top-color: #db0000;
+    left: 39%;
+}
+
+.hero_banner.res .caption .search {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    padding: 0px 100px 0px 0px;
+    margin-bottom: 15px;
+}
+
+.hero_banner .caption .search .input-group-addon {
+    color: #888585;
+    text-align: center;
+    background-color: #ffffff;
+    display: -webkit-inline-box;
+    border-right: solid 1px #ccc;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.hero_banner .caption .search .input-group-addon i {
+    margin-right: 0.5rem;
+}
+
+.hero_banner .caption input {
+    height: 100%;
+    width: 100%;
+    padding: 0px 20px;
+    font-family: inherit;
+    background: white;
+    font-size: 18px;
+    font-weight: 300;
+    outline: none;
+    color: #555;
+    border: 0;
+    text-overflow: ellipsis;
+}
+
+.hero_banner .caption .find {
+    background: #e41b13;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 0;
+    padding: 10px 35px;
+    height: 50px;
+    border-radius: 0px 4px 4px 0px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 22px;
+}
+
+.hero_banner.res .caption .form-inline .form-group {
+    margin-right: 1rem;
+}
+
+.hero_banner.res .caption .form-inline [type="checkbox"] + label {
+    padding-left: 25px;
+}
+
+[type="checkbox"] + label:before {
+    border-color: #e41b13;
+}
+
+.hero_banner.res .caption .form-inline [type="checkbox"]:checked + label:before {
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.hero_banner .caption .pupular {
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+.hero_banner .caption .pupular span {
+}
+
+.hero_banner .caption .pupular a {
+    color: #fff;
+    margin: 0 15px;
+    background: rgba(0, 0, 0, 0.39);
+    padding: 1px 10px;
+    border-radius: 25px;
+}
+
+.close_serch {
+    display: block;
+    margin: 1.5rem 0 0 0;
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+/*----------------- end hero banner ----------------------------*/
+
+/*----------------- buyer ----------------------------*/
+.buyer .buy_warp {
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.buyer .buy_warp:last-child {
+    border-bottom: 0 !important;
+}
+
+.left-round {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    background: #d6d6d6;
+    border-radius: 100%;
+    padding: 1rem;
+    width: 110px;
+    height: 110px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 5px 2px 0px #a5a5a5;
+}
+
+.right-round {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    background: #d6d6d6;
+    border-radius: 100%;
+    padding: 1rem;
+    width: 110px;
+    height: 110px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 5px 2px 0px #a5a5a5;
+}
+
+.left-round img, .right-round img {
+    max-width: 90%;
+}
+
+.buyer .buy_warp .fa {
+    font-size: 4.3rem;
+    color: #fff;
+}
+
+.buyer h2 {
+    font-family: 'Comfortaa', cursive;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #4a4a4a;
+}
+
+.buyer h2 span {
+    color: #e41b13;
+}
+
+.sec-line {
+    position: relative;
+    width: 90px;
+    height: 1px;
+    background: #888;
+    margin: 30px auto;
+}
+
+.sec-line::before {
+    position: absolute;
+    content: "";
+    width: 50px;
+    height: 1px;
+    background: #888;
+    bottom: -6px;
+    left: 18px;
+}
+
+.sec-line::after {
+    position: absolute;
+    content: "";
+    width: 50px;
+    height: 1px;
+    background: #888;
+    top: -6px;
+    left: 18px;
+}
+
+.buyer .buy_warp h4 {
+    font-family: 'Comfortaa', cursive;
+    color: #4a4a4a;
+    font-size: 1.5rem;
+    font-weight: 600;
+    z-index: 1;
+    line-height: 1.7rem;
+    letter-spacing: 1px;
+}
+
+.buyer .buy_warp h4 span {
+    display: block;
+    font-size: 1rem;
+    color: #676767;
+    text-transform: initial;
+}
+
+.buyer .buy_warp.round-left-bdr {
+    padding-left: 9rem;
+    border-bottom: solid 1px #e0e0e0;
+}
+
+.buyer .buy_warp.round-right-bdr {
+    padding-right: 9rem;
+    text-align: right;
+    border-bottom: solid 1px #ccc;
+}
+
+.buyer .buy_warp p {
+    font-size: 0.9rem;
+    margin-bottom: 4rem;
+    line-height: 1.5rem;
+    color: #565656;
+}
+
+/*----------------- end buyer ----------------------------*/
+
+/*----------------- faq ----------------------------*/
+
+.faq {
+    border-top: dotted 2px #e0e0e0;
+    background: #f3f3f3;
+}
+
+.faq h2 {
+    font-family: 'Comfortaa', cursive;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.faq h2 span {
+    color: #e41b13;
+}
+
+.faq .faq_warp {
+    margin-bottom: 2.5rem;
+}
+
+.faq h3 {
+    font-family: 'Comfortaa', cursive;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: #4a4a4a;
+    line-height: 1.5;
+}
+
+.faq h3 span {
+    color: #e41b13;
+    font-weight: bold;
+    font-size: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+    float: left;
+}
+
+.faq .faq_warp p {
+    font-size: 0.9rem;
+    color: #565656;
+    line-height: 1.5rem;
+}
+
+/*----------------- end faq ----------------------------*/
+
+/*------------------ requirement modal -----------------*/
+
+.join-101housing .modal-content {
+    overflow: hidden;
+    border-radius: 7px;
+}
+
+.join-101housing .modal-body {
+    padding-bottom: 0;
+}
+
+.join-101housing h2 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+}
+
+.join-101housing .card-block {
+    z-index: 1;
+    position: relative;
+}
+
+.join-101housing .bhk_type label {
+    width: 25%;
+}
+
+.join-101housing .mdl_left {
+    background: #e8e8e8 url(../images/101housing/mdl_left_bg.png) right;
+    background-repeat: repeat-y;
+    background-size: 3px 10px;
+    position: absolute;
+    left: -17px;
+    right: 0;
+    bottom: 0;
+    top: -32px;
+}
+
+.join-101housing .md-block {
+    padding: 0.6rem 0.7rem 0px;
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+    background: #fff;
+}
+
+.join-101housing .otp .md-block {
+    border: solid 1px #6f6f6f;
+}
+
+.join-101housing md-input-container .md-placeholder, .join-101housing md-input-container label:not(.md-no-float):not(.md-container-ignore) {
+    -webkit-transform: translate3d(0, 36px, 0) scale(1.1);
+    transform: translate3d(0, 36px, 0) scale(1.1);
+    color: #696969;
+    font-weight: 300;
+}
+
+.join-101housing md-input-container.md-input-focused label:not(.md-no-float), .join-101housing md-input-container.md-input-has-placeholder label:not(.md-no-float), .join-101housing md-input-container.md-input-has-value label:not(.md-no-float) {
+    -webkit-transform: translate3d(0, 30px, 0) scale(0.9);
+    transform: translate3d(0, 30px, 0) scale(0.9);
+    text-transform: uppercase;
+    color: #a7a5a5;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+.join-101housing md-input-container.md-default-theme .md-input, .join-101housing md-input-container .md-input {
+    border: 0 !important;
+    font-size: 13px;
+    padding: 5px 2px 0px;
+}
+
+.join-101housing .bhk_type {
+    margin-bottom: 1.5rem;
+}
+
+.join-101housing .bhk_type label span {
+    padding: 13px 0;
+}
+
+.join-101housing .col-md-7 {
+    padding-left: 1.7rem;
+}
+
+.join-101housing .otp {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.91);
+    left: -3px;
+    top: -33px;
+    right: -18px;
+    bottom: 0;
+    padding-top: 7rem;
+    z-index: 2;
+}
+
+.join-101housing .otp .md-block:nth-child(2) {
+    margin-bottom: 0.5rem;
+}
+
+.join-101housing .otp .change {
+    top: 9px;
+}
+
+.join-101housing .modal-content .close {
+    right: 1.5rem;
+    top: 1.5rem;
+    z-index: 3;
+    opacity: 1;
+}
+
+.join-101housing .top_abtar {
+    border-radius: 50%;
+    width: 110px;
+    height: 110px;
+    background: #ffffff;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: top;
+    padding: 0.5rem;
+    font-size: 4rem;
+    margin: 0 auto;
+    border: solid 1px #a9a9a9;
+    z-index: 5;
+    position: relative;
+}
+
+.join-101housing .mdl_left_sec {
+    font-family: 'Comfortaa', cursive;
+}
+
+.join-101housing .mdl_left_sec h3 {
+    z-index: 5;
+    position: relative;
+    font-size: 1.5rem;
+    margin-top: 0.9rem;
+    color: #000;
+}
+
+.join-101housing .mdl_left_sec p {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    z-index: 5;
+    position: relative;
+    color: #464646;
+}
+
+.join-101housing .mdl_left_sec .mdl_left_btm {
+    position: absolute;
+    bottom: 2rem;
+    z-index: 5;
+    left: 1rem;
+    right: 1.5rem;
+    border-top: solid 1px #a7a7a7;
+    padding-top: 0.7rem;
+}
+
+.join-101housing .sucess-mess {
+    display: block;
+    text-align: center;
+    min-height: 25rem;
+}
+
+.join-101housing .sucess-mess .check-success {
+    width: 60px;
+    height: 60px;
+    border: 3px solid #ADA8A8;
+    border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    padding: 5px;
+    font-size: 32px;
+    color: #C00;
+    display: block;
+    margin: 35px auto 5px;
+}
+
+.join-101housing .sucess-mess h3 {
+    font-size: 28px;
+    color: #444;
+    margin: 7px;
+}
+
+.join-101housing .sucess-mess p {
+    font-size: 12px;
+    line-height: 25px;
+    color: #504D4D;
+}
+
+.md-select-menu-container, .pac-container {
+    z-index: 9991;
+}
+
+.md-select-backdrop {
+    z-index: 1052 !important;
+}
+
+@media (max-width: 768px) {
+    .hero_banner {
+        height: 370px;
+    }
+
+    .hero_banner .caption {
+        left: 0;
+        right: 0;
+        bottom: 25px;
+        text-align: center;
+    }
+
+    .hero_banner .caption h1 {
+        font-size: 26px;
+    }
+
+    .hero_banner .caption p {
+        font-size: 12px;
+        line-height: 18px;
+        margin: 0 0 18px;
+    }
+
+    .hero_banner.res .caption .form-inline.mt-1 {
+        margin-top: 0.5rem !important;
+        float: inherit;
+        display: -webkit-inline-box;
+    }
+
+    .hero_banner.res .caption .form-inline.mt-1 .form-group {
+        margin-bottom: 0.5rem;
+    }
+
+    .hero_banner.res .caption .search {
+        height: 40px;
+        padding: 0px 65px 0px 0px;
+    }
+
+    .hero_banner .caption .search .input-group-addon {
+        padding-left: 0.7rem;
+        padding-right: 0.7rem;
+    }
+
+    .hero_banner .caption .search .input-group-addon i {
+        margin-right: 0.2rem;
+    }
+
+    .hero_banner .caption .find {
+        padding: 5px 25px;
+        height: 40px;
+    }
+
+    .hero_banner .caption .find span {
+        display: none;
+    }
+
+    .hero_banner .caption .pupular {
+        font-size: 11px;
+    }
+
+    .hero_banner .caption .pupular a {
+        margin: 0 10px;
+    }
+
+    .hero_banner .caption .pupular span {
+        display: block;
+        margin-bottom: 0.7rem;
+    }
+
+    .hero_banner .buyer_head {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 100%;
+        margin-top: 8rem;
+    }
+
+    .hero_banner .buyer_head h1 {
+        font-family: 'Comfortaa', cursive;
+        font-size: 1.7rem;
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+
+    .hero_banner .buyer_head p {
+        line-height: 1.5;
+        font-size: 12px;
+        max-height: 2.5rem;
+        overflow: hidden;
+    }
+
+    .mb-3 {
+        margin-bottom: 2rem !important;
+    }
+
+    .mt-4 {
+        margin-top: 2.5rem !important;
+    }
+
+    .pt-5 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+
+    .pb-6 {
+        padding-bottom: 3rem !important;
+    }
+
+    .buyer .buy_warp {
+        margin-bottom: 2rem;
+    }
+
+    .buyer .buy_warp:after {
+        bottom: -0.5rem;
+    }
+
+    .buyer h2, .buyer .buy_warp h2 {
+        font-size: 1.5rem;
+    }
+
+    .buyer .buy_warp h4 {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    .buyer .buy_warp h4 span {
+        font-size: 0.8rem;
+    }
+
+    .buyer .buy_warp p {
+        font-size: 0.8rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .buyer .buy_warp.round-left-bdr {
+        padding-left: 0;
+    }
+
+    .buyer .buy_warp.round-right-bdr {
+        padding-right: 0;
+    }
+
+    .left-round, .right-round {
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+    }
+
+    .join-101housing .mdl_left_sec {
+        display: none;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 768px) {
+    .col-xs-6, .col-xs-6 {
+        width: 50%;
+    }
+}
+
+.join-101housing .col-md-7 {
+    padding-left: 15px;
+}
+
+.join-101housing .modal-body {
+    padding: 2rem 1rem 0rem 1rem;
+}
+
+@media (min-width: 576px) {
+    .join-101housing .modal-dialog {
+        min-width: 750px;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .hero_banner .caption .pupular {
+        display: none;
+    }
+
+    .hero_banner .caption {
+        bottom: 15px;
+    }
+
+}

@@ -1,0 +1,41 @@
+<?php $__env->startSection('css'); ?>
+    <link rel="stylesheet" href="<?php echo e(asset('css/static.min.css')); ?>" media="screen">
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <hs-header></hs-header>
+    <main>
+        <div class="static_page">
+            <div class="container pb-4">
+                <div class="row">
+                    <div class="col-sm-5 mb-20"> <img src="images/abt.jpg" class="img-fluid" alt="EnsureTax" > </div>
+
+                    <div class="col-sm-7">
+                        <h2 class="mb-2">About Us</h2>
+                        <p>EnsureTax.com is one of the leading providers of tax &amp; regulatory services, risk, financial &amp; business advisory, internal audit, and corporate governance services in India Our commitment to quality and innovation has helped us in establishing a long lasting relationship with our clients. Constant dialogue with the clients helps us to understand their needs and wants and offer them customized solutions. </p>
+                        <p>We are committed to provide tailor made services to the individual needs of each client. Our team offers a formidable range of expertise and experience. Everything from business accounting and taxation to business start-ups and corporate finance. We keep a close eye on all the essentials for you and offer proactive advice on how you can improve your personal, or business finances. </p>
+                        <p>We have experienced, energetic professionally focused team of certified public accountants, chartered accountants along with senior Advocates, Company Secretary, Attorney's who are dedicated to provide efficient services in a consistent manner.</p>
+
+                        <p><strong>Our four key values are :</strong></p>
+                        <ul>
+                            <li><i class="fa fa-check-square-o"></i> Clients</li>
+                            <li><i class="fa fa-check-square-o"></i> People</li>
+                            <li><i class="fa fa-check-square-o"></i> Integrity</li>
+                            <li><i class="fa fa-check-square-o"></i> Quality</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+        </div>
+    </main>
+    <hs-footer></hs-footer>
+<?php $__env->stopSection(); ?>
+<?php /*<?php $__env->startSection('script'); ?>*/ ?>
+<?php /*<script type='text/javascript' src="<?php echo e(asset('js/static.min.js')); ?>"></script>*/ ?>
+<?php /*<?php $__env->stopSection(); ?>*/ ?>
+<?php echo $__env->make('master.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

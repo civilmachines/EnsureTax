@@ -1,0 +1,55 @@
+<main>
+    <div class="container-fluid">
+        <!-- Section: Edit Account -->
+        <section class="section">
+            <!-- First row -->
+            <div class="row">
+                <!-- First column -->
+                <div class="col-lg-3 dash_sidebar">
+                    <div class="dashboard_link">
+                        <div class="admin-panel info-admin-panel">
+                            <div class="card-block text-center">
+                                <img src='images/default-user.png' alt="User Photo"
+                                     class="rounded-circle center-block contact-avatar ">
+                                <h4><%authUser.name%></h4>
+                                <p>
+                                    <small><%authUser.email%></small>
+                                </p>
+                            </div>
+                            <div class="list-group">
+                                <!--<a ui-sref-active="active" ui-sref="dashboard" data-ng-click="user_menu=!user_menu"-->
+                                <!--class="list-group-item">-->
+                                <!--<i class="fa fa-dashboard"></i> &nbsp; Dashboard-->
+                                <!--</a>-->
+                                <a ui-sref-active="active" ui-sref="itr" data-ng-click="user_menu=!user_menu"
+                                   class="list-group-item">
+                                    <i class="fa fa-user"></i> &nbsp; ITR
+                                </a>
+
+                                <a ui-sref-active="active" ui-sref="corporate-itr" data-ng-click="user_menu=!user_menu"
+                                   class="list-group-item">
+                                    <i class="fa fa-user"></i> &nbsp; Corporate ITR
+                                </a>
+                                <a ui-sref-active="active" ui-sref="gst-files" data-ng-click="user_menu=!user_menu"
+                                   class="list-group-item">
+                                    <i class="fa fa-user"></i> &nbsp; GST 3-B
+                                </a>
+                                <a ui-sref-active="active" ui-sref="profile" data-ng-click="user_menu=!user_menu"
+                                   class="list-group-item">
+                                    <i class="fa fa-user"></i> &nbsp; My Profile
+                                </a>
+
+                                <a ui-sref-active="active" ui-sref="password" data-ng-click="user_menu=!user_menu"
+                                   class="list-group-item">
+                                    <i class="fa fa-lock"></i> &nbsp; Change Password
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 anim_view" ui-view=""></div>
+            </div>
+        </section>
+    </div>
+</main>
