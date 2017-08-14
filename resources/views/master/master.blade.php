@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="101housing.com">
-    <meta name="author" content="101housing.com">
+    <meta name="description" content="EnsureTax: Corporate and Individuals Tax Solution">
+    <meta name="author" content="Civil Machines Technologies Private Limited">
     <link rel="icon" href="images/favicon.png">
     <title>EnsureTax.com</title>
     <script>
