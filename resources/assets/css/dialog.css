@@ -1,4 +1,4 @@
-﻿﻿#spmask {
+﻿#spmask {
     position:absolute;
     left:0;
     top:0;
@@ -8,8 +8,14 @@
 }
 
 @media print, (max-width:550px) {
-    #boxes, #boxes #dialog {
-        display:none;
+    .modal-welcome .modal-content {
+        height: 201px;
+    }
+}
+
+@media print, (max-width:400px) {
+    .modal-welcome .modal-content {
+        height: 177px;
     }
 }
 
