@@ -140,7 +140,7 @@ app
             transclude: true,
             template: function (element, attrs) {
                 var html =
-                    '<div class="col-md-8 text-right" data-ng-show="directives" ng-transclude>' +
+                    '<div class="col-md-2 text-right" data-ng-show="directives" ng-transclude>' +
                     '</div>';
                 return $authModel.viewPermission($CONFIG.$ROLES.ADMIN) ? html : '<span></span>'
             }

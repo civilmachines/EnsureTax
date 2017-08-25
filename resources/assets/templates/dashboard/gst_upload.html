@@ -13,6 +13,7 @@
                 You can check and edit your ITR in ITR section.</p>
             <a href="#" ui-sref="gst-files" class="btn btn-info ok"> OK </a>
         </div>
+        <div ng-hide="message">
                     <form name="uploadGSTForm" novalidate data-ng-submit="uploadGST()" enctype="multipart/form-data">
                         <div class="card en_doc mt-2">
                             <div class="card-block">
@@ -58,5 +59,6 @@
                             <save-btn></save-btn>-->
                         </div>
                     </form>
+        </div>
     </div>
 </div>

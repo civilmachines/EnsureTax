@@ -164,7 +164,6 @@ app
             },
 
             changeStatus: function () {
-                console.log($scope.itr)
                 if ($scope.itr && $scope.itr.status > 0 && $scope.itr.selected.length > 0) {
                     var data = {
                         id: $scope.itr.selected,
@@ -949,11 +948,11 @@ app
     }])
     .controller('gstFilesCtrl', ['$scope', '$state', '$filter', 'resolveData', 'toastr', '$appModel', '$dashboardModel', 'localStorageService', function ($scope, $state, $filter, resolveData, toastr, $appModel, $dashboardModel, localStorageService) {
         localStorageService.clearAll();
-        if (!$dashboardModel.GSTFiles.length > 0) {
+       /* if (!$dashboardModel.GSTFiles.length > 0) {
             $scope.not_found = true;
             $scope.message = 'Data Not Found';
             return false;
-        }
+        }*/
         angular.extend($scope, {
             filterdata: {
                 minValue: 0,
@@ -973,7 +972,7 @@ app
             sortby: function (item, order) {
                 order = order ? 'desc' : 'asc';
                 var data = angular.extend($scope.filterdata, {orderby: item, order: order});
-                itrList(data, item, order);
+                gstList(data, item, order);
             },
 
             changeStatus: function () {
@@ -982,59 +981,50 @@ app
                         id: $scope.itr.selected,
                         status: $scope.itr.status
                     };
-                    itrStatus(data);
+                    gstStatus(data);
                 } else if (!$scope.itr.selected.length > 0 && $scope.itr) {
                     var status = {
                         status: $scope.itr.status
                     };
-                    itrList(status);
+                    gstList(status);
                 }
             }
         });
-        /*  function itrList(data) {
-         data = {
-         status: data.status,
-         orderBy: data.orderby,
-         order: data.order
-         };
-         $dashboardModel.ITRList(data).then(function (result) {
-         if (!result.data.data.length > 0) {
-         $scope.no_item = true;
-         $scope.hide_list = true;
-         } else {
-         $scope.hide_list = false;
-         $scope.no_item = false;
-         }
-         })
-         }
 
-         $scope.$watchCollection(function () {
-         return $dashboardModel.itrList;
-         }, function (newval, oldval) {
-         if ($dashboardModel.itrList.length > 0) {
-         $scope.ITR = $dashboardModel.itrList;
-         $scope.not_found = $scope.ITR.length > 0 ? false : true;
-         $scope.directives = $scope.ITR.length > 0 ? true : false;
-         }
-         });
+        function gstList(data) {
+            data = {
+                status: data.status,
+                orderBy: data.orderby,
+                order: data.order
+            };
+            $dashboardModel.gstFiles(data).then(function (result) {
+                if (!result.data.data.length > 0) {
+                    $scope.no_item = true;
+                    $scope.hide_list = true;
+                } else {
+                    $scope.hide_list = false;
+                    $scope.no_item = false;
+                }
+            })
+        }
 
-         function toggleCheckbox(item, list) {
-         var idx = list.indexOf(item);
-         if (idx > -1) {
-         list.splice(idx, 1);
-         } else {
-         list.push(item);
-         }
-         }
+        function toggleCheckbox(item, list) {
+            var idx = list.indexOf(item);
+            if (idx > -1) {
+                list.splice(idx, 1);
+            } else {
+                list.push(item);
+            }
+        }
 
-         function itrStatus(data) {
-         $dashboardModel.itrStatus(data).then(function (result) {
-         if (result.data.success) {
-         toastr.success("status Updated", 'Success!');
-         }
-         $appModel.progressBar(false, $scope);
-         })
-         }
+        function gstStatus(data) {
+            $dashboardModel.gstStatus(data).then(function (result) {
+                if (result.data.success) {
+                    toastr.success("status Updated", 'Success!');
+                }
+                $appModel.progressBar(false, $scope);
+            })
+        }
 
          $scope.$watchCollection(function () {
          return $appModel.loadMasterCategory;
@@ -1043,13 +1033,16 @@ app
          var loadMaster = $filter('parseParent')($appModel.loadMasterCategory, 0);
          $scope.status = loadMaster.application_status;
          }
-         });*/
+         });
 
         $scope.$watchCollection(function () {
             return $dashboardModel.GSTFiles;
         }, function (newval, oldval) {
             if ($dashboardModel.GSTFiles.length > 0) {
                 $scope.GST = $dashboardModel.GSTFiles;
+                $scope.not_found = true;
+                $scope.directives = true;
+                $scope.message = 'Data Not Found';
             }
         });
     }])

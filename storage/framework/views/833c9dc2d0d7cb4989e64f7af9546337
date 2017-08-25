@@ -1,0 +1,12 @@
+<?php $__env->startSection('css'); ?>
+    <link rel="stylesheet" href="<?php echo e(asset('css/dashboard.min.css')); ?>" media="screen"/>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <ui-view></ui-view>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('script'); ?>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo e(config('global.google_map_api')); ?>&libraries=places"
+            type="text/javascript" async></script>
+    <script type='text/javascript' src="<?php echo e(asset('js/dashboard.min.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

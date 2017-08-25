@@ -86,13 +86,13 @@ var app = angular.module('101housing', ['ui.router', 'ngMaterial', 'ngAnimate', 
         'API_POST_ITR5_DETAILS': baseUrl + 'api/v1/itr5',
         'API_CORP_ITR_LIST': baseUrl + 'api/v1/corporateitrlist',
         'API_EDIT_CORPORATE_ITR': baseUrl + 'api/v1/editcorporateitr/',
+        'API_CORP_ITR_STATUS': baseUrl + 'api/v1/corpitrstatus',
         'API_DELET_CORP_IMAGE': baseUrl + 'api/v1/delcorpimg',
         'API_GET_GST_FILES': baseUrl + 'api/v1/gstfiles',
         'API_UPLOAD_GST_FILES': baseUrl + 'api/v1/uploadgst',
         'API_EDIT_GST_FILE': baseUrl + 'api/v1/editgstfile/',
         'API_DELETE_GST_IMAGE': baseUrl + 'api/v1/deletegstimage',
-        'API_CORP_ITR_STATUS': baseUrl + 'api/v1/corpitrstatus',
-
+        'API_POST_GST_STATUS': baseUrl + 'api/v1/gststatus',
         /*-------------------------------ensureTax API-----------------------------------------*/
 
         /*

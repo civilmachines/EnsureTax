@@ -16,7 +16,7 @@ class GSTFilesImages extends Model
     protected $table = 'tax_gst_images';
 
     protected $fillable = [
-        'agent_id', 'category', 'image', 'create_date', 'isActive'];
+        'agent_id', 'category', 'image', 'status', 'create_date', 'isActive'];
 
     protected $hidden = [];
 
@@ -28,18 +28,31 @@ class GSTFilesImages extends Model
         return $this->belongsTo('App\Models\User\UserProfile', 'agent_id');
     }
 
+    public function status(){
+        return $this->belongsTo('App\Models\TaxItr\Categories', 'status');
+    }
+
     public static function GSTFiles($data)
     {
+        $orderby = 'agent_id';
+        $order = 'desc';
         $user = Auth::User();
         try {
-            $query = GSTFilesImages::with(['userDetails']);
+            $query = GSTFilesImages::with(['userDetails', 'status']);
             if (!$user->hasRole(Config('auth.roles.Super_User'), false))
-                $itr = $query->where('agent_id', $user->agents->id);
+                $query->where('agent_id', $user->agents->id);
 
-            $itr = $query->groupBy('agent_id')->get();
-            /*
-                        if (!$user->hasRole(Config('auth.roles.Super_User'), false))
-                            $itr = GSTFilesImages::where('agent_id', $user->agents->id)->get();*/
+            if (array_has($data, 'orderBy') && array_has($data, 'order')) {
+                $orderby = $data['orderBy'];
+                $order = $data['order'];
+            }
+
+            if(!array_has($data, 'agent_id') && array_has($data, 'status') && $data['status'] > 0){
+                $query->where('status', $data['status'])->get();
+            }
+//            $itr = $query->orderBy($orderby, $order)->get();
+
+            $itr = $query->groupBy('agent_id')->orderBy($orderby, $order)->get();
             if (!$itr) {
                 return LeaseHelper::response(false, 200, 'Data Not Found');
             }
@@ -114,6 +127,22 @@ class GSTFilesImages extends Model
             return LeaseHelper::response(true, 500, $exe->getMessage());
         }
         return LeaseHelper::response(true, 200, 'Image Has Benn Deleted Successfully');
+    }
+
+    public static function gstStatus($data){
+        try{
+            $value = $data['agent_id'];
+            if(array_has($data, 'status')) {
+                foreach ($value as $id) {
+                    $sta = GSTFilesImages::where('agent_id', $id)
+                        ->update(array('status' => $data['status']));
+                }
+            }
+        }catch (ModelNotFoundException $exe){
+            return LeaseHelper::response(false, 500, $exe->getMessage());
+        }
+        $sta = self::GSTFiles($data);
+        return LeaseHelper::response(true, 200, 'Successful', $sta['data']);
     }
 
 }

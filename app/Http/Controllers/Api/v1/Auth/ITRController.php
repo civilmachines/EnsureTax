@@ -260,6 +260,12 @@ class ITRController extends Controller
         $result = CorporateTax::itrStatus($data);
         return response($result);
     }
+    function gstStatus(Request $request)
+    {
+        $data = $request->all();
+        $result = GSTFilesImages::gstStatus($data);
+        return response($result);
+    }
     /**
      * Show the form for creating a new resource.
      *

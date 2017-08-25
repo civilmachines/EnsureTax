@@ -1,5 +1,5 @@
 <div class="card-block">
-    <div data-ng-if="not_found" class="dashboard_sec text-center">
+    <div class="dashboard_sec text-center" data-ng-hide="not_found">
         <div class="admin-panel info-admin-panel">
             <div class="dashboard_title">
                 <h2>GST 3-B</h2>
@@ -14,22 +14,22 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <itr-status></itr-status>
-
+   <!-- <div class="row">
+        &lt;!&ndash;<itr-status></itr-status>&ndash;&gt;
+        <div class="col-md-6"></div>
         <sort-by>
             <div data-ng-click="porder = !porder; sortby('create_date', porder)"><label style="color: green">Sort
                 By:</label> <span> Date
                 <i data-ng-class="porder?'fa fa-arrow-up':'fa fa-arrow-down'"></i></span></div>
         </sort-by>
-    </div>
+    </div>-->
     <section class="section mb-0 properties">
-        <div data-ng-show="no_item" class="no-property-sec">
+        <!--<div class="no-property-sec" data-ng-show="no_item">
             <div class="animated fadeInDown">
                 <p><strong>Sorry! No Items Match Your Search.</strong></p>
                 <p>ThankYou </p>
             </div>
-        </div>
+        </div>-->
         <div data-ng-hide="hide_list">
             <div class="itr_list" data-ng-repeat="row in GST track by $index">
                 <div class="row">
@@ -51,7 +51,7 @@
                                 </div>
                                 <div class="col-sm-12 col-md-3">
                                     <!--<span>Status:</span><br>-->
-                                    <!--<small data-ng-if="row.ITR"><strong><%row.s_t_a_t_u_s.category_name%></strong></small>-->
+                                    <small data-ng-if="row.GST"><strong><%row.status.category_name%></strong></small>
                                 </div>
                             </div>
                         </a>
