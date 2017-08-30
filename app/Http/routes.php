@@ -96,6 +96,10 @@ $api->version('v1', function ($api) {
             'as' => 'post.editcorporateitr',
             'uses' => 'Auth\ITRController@editCorporateITR'
         ]);
+        $api->post('/corpitrstatus', [
+            'as' => 'post.corpitrstatus',
+            'uses' => 'Auth\ITRController@corpItrStatus'
+        ]);
         $api->delete('/delcorpimg', [
             'as' => 'post.delcorpimg',
             'uses' => 'Auth\ITRController@delCorpImg'
@@ -115,8 +119,12 @@ $api->version('v1', function ($api) {
             'uses' => 'Auth\ITRController@editGSTFile'
         ]);
         $api->delete('/deletegstimage', [
-            'as' => 'post.deletegstimage',
+            'as' => 'delete.deletegstimage',
             'uses' => 'Auth\ITRController@delGSTImg'
+        ]);
+        $api->post('/gststatus', [
+            'as' => 'post.gststatus',
+            'uses' => 'Auth\ITRController@gstStatus'
         ]);
 
         /* -------------------------------ensureTax API----------------------------------------- */

@@ -279,6 +279,24 @@ app
             });
         };
 
+        $dashboardModel.corpItrStatus = function (data) {
+            return $http({
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                url: $API.API_CORP_ITR_STATUS,
+                method: 'POST',
+                data: data
+            }).success(function (response) {
+                if (response.success) {
+                    $dashboardModel.corpItrList = response.data;
+                }
+                return response;
+            }).error(function (data, status, headers) {
+                return $appModel.error(data, status);
+            });
+        };
+
         $dashboardModel.gstFiles = function (data) {
             return $http({
                 headers: {
@@ -340,6 +358,25 @@ app
                 return console.log(data);
             });
         };
+
+        $dashboardModel.gstStatus = function (data) {
+            return $http({
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                url: $API.API_POST_GST_STATUS,
+                method: 'POST',
+                data: data
+            }).success(function (response) {
+                if (response.success) {
+                    $dashboardModel.corpItrList = response.data;
+                }
+                return response;
+            }).error(function (data, status, headers) {
+                return $appModel.error(data, status);
+            });
+        };
+
 
 
 

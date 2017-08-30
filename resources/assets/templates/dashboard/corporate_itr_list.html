@@ -1,5 +1,5 @@
 <div class="card-block">
-    <div data-ng-if="not_found" class="dashboard_sec text-center">
+    <div class="dashboard_sec text-center" data-ng-hide="not_found">
         <div class="admin-panel info-admin-panel">
             <div class="dashboard_title">
                 <h2>Corporate ITR</h2>
@@ -18,12 +18,12 @@
     </div>
     <div class="row">
         <itr-status></itr-status>
-
-        <sort-by>
-            <div data-ng-click="porder = !porder; sortby('create_date', porder)"><label style="color: green">Sort
-                By:</label> <span> Date
+        <div class="col-md-6"></div>
+            <sort-by>
+                <div data-ng-click="porder = !porder; sortby('create_date', porder)"><label style="color: green">Sort
+                    By:</label> <span> Date
                 <i data-ng-class="porder?'fa fa-arrow-up':'fa fa-arrow-down'"></i></span></div>
-        </sort-by>
+            </sort-by>
 
         <!--<p>
                 <sort-by></sort-by>
@@ -42,14 +42,15 @@
             </div>-->
         <!--</div>-->
     </div>
-    <div class="row" data-ng-if="itr_exists">
+    <add-corp-itr></add-corp-itr>
+    <!--<div class="row" data-ng-if="itr_exists">
         <div class="col-sm-12 col-md-3 text-right">
             <a ui-sref="add-corp-itr" class="btn btn-primary">
                 ADD ITR</a>
         </div>
-    </div>
+    </div>-->
     <section class="section mb-0 properties">
-        <div data-ng-show="no_item" class="no-property-sec">
+        <div class="no-property-sec" data-ng-show="no_item">
             <div class="animated fadeInDown">
                 <p><strong>Sorry! No Items Match Your Search.</strong></p>
                 <p>ThankYou </p>
@@ -59,7 +60,7 @@
             <div class="itr_list" data-ng-repeat="row in ITR track by row.id">
                 <div class="row">
                     <div class="col-sm-12 col-md-2">
-                        <!--<itr-check></itr-check>-->
+                        <itr-check></itr-check>
                     </div>
                     <div class="col-sm-12 col-md-8">
                         <a href="#">
@@ -77,7 +78,7 @@
                                 </div>
                                 <div class="col-sm-12 col-md-3">
                                     <!--<span>Status:</span><br>-->
-                                    <small data-ng-if="row.ITR"><strong><%row.s_t_a_t_u_s.category_name%></strong>
+                                    <small data-ng-if="row.ITR"><strong><%row.status.category_name%></strong>
                                     </small>
                                 </div>
                             </div>

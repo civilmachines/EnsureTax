@@ -140,7 +140,7 @@ app
             transclude: true,
             template: function (element, attrs) {
                 var html =
-                    '<div class="col-md-8 text-right" data-ng-show="directives" ng-transclude>' +
+                    '<div class="col-md-2 text-right" data-ng-show="directives" ng-transclude>' +
                     '</div>';
                 return $authModel.viewPermission($CONFIG.$ROLES.ADMIN) ? html : '<span></span>'
             }
@@ -160,6 +160,21 @@ app
                     '<md-option ng-value="0">All' +
                     '</md-option></md-select></md-input-container></div>';
                 return $authModel.viewPermission($CONFIG.$ROLES.ADMIN) ? html : '<span></span>'
+            }
+        }
+    }])
+    .directive('addCorpItr', ['$authModel', '$CONFIG', function ($authModel, $CONFIG) {
+        return {
+            restrict: 'E',
+            replace: true,
+            template: function (element, attrs) {
+                var html =
+                    '<div class="row" data-ng-if="itr_exists">' +
+                    '<div class="col-sm-12 col-md-3 text-right">' +
+                    '<a ui-sref="add-corp-itr" class="btn btn-primary">' +
+                    'ADD ITR</a>' +
+                    '</div></div>'
+                return !$authModel.viewPermission($CONFIG.$ROLES.ADMIN) ? html : '<span></span>'
             }
         }
     }])

@@ -28,11 +28,11 @@ elixir(function (mix) {
             templateCache: {
                 filename: 'homeTemplates.js',
                 module: 'homeTemplates',
-                standalone: true,
+                standalone: true
             },
             htmlmin: {
                 collapseWhitespace: true,
-                removeComments: true,
+                removeComments: true
             }
         })
         .ngTemplateCache('/*.html', 'resources/assets/js/templates', 'resources/assets/templates/dashboard', {

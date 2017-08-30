@@ -13,6 +13,7 @@ app
                     openAuth();
                 }
             },
+            /*
             welcome: function () {
                 $uibModal.open({
                     templateUrl: 'welcome.html',
@@ -36,15 +37,15 @@ app
                 //   change route after modal result
                     .result.then(function () {
                     // change route after clicking OK button
-                    /*  $state.go($state.$current.name);*/
+                    /!*  $state.go($state.$current.name);*!/
                 }, function () {
                     // change route after clicking Cancel button or clicking background
-                    /* $state.go($state.$current.name);*/
+                    /!* $state.go($state.$current.name);*!/
                 })
                 // $state.go($state.current.name + '.auth');
             },
 
-            applyGST3B: function () {
+*/            applyGST3B: function () {
                 localStorageService.set('g3b', true);
                 if ($rootScope.auth) {
                     $window.location.href = "/dashboard/gstfiles";
@@ -71,7 +72,7 @@ app
             })
         }
 
-        $scope.welcome();
+        // $scope.welcome();
         $scope.$watchCollection(function () {
             return $appModel.loadMasterCategory;
         }, function (newval, oldval) {
