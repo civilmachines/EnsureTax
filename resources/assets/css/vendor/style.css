@@ -645,7 +645,7 @@ footer.page-footer .read{
     margin-top: 5px;
 }
 
-.modal-login .modal-content, .modal-welcome .modal-content {
+.modal-login .modal-content, .modal-welcome .modal-content, .two-login .modal-content {
     display: block;
     width: 100%;
     height: 448px;
@@ -655,7 +655,7 @@ footer.page-footer .read{
     -webkit-border-radius: 5px;
     border-radius: 5px;
 }
-
+.two-login .modal-content{height: 200px;}
 .modal-welcome .modal-content{height: 328px;}
 .modal-welcome .modal-content .close {
     z-index: 99999;
@@ -671,7 +671,7 @@ footer.page-footer .read{
     padding: 2rem 2rem 1rem 2rem;
 }
 
-.modal-dialog .modal-content .register-content, .modal-dialog .modal-content .forgot-content, .modal-dialog .modal-content .otp-content {
+.modal-dialog .modal-content .register-content, .modal-dialog .modal-content .forgot-content, .modal-dialog .modal-content .otp-content, .modal-dialog .modal-content .email-content {
     -webkit-transition: .5s ease;
     transition: .5s ease;
     background: #fff;
@@ -693,6 +693,14 @@ footer.page-footer .read{
 }
 
 .modal-dialog .modal-content .active.forgot .forgot-content {
+    background: #fff;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+}
+
+.modal-dialog .modal-content .active.email .email-content {
     background: #fff;
     position: absolute;
     right: 0;
@@ -798,6 +806,8 @@ button.back {
     #modal-register .modal-dialog, .modal-login .modal-dialog {
         max-width: 450px;
     }
+    .two-login .modal-dialog{max-width:550px;}
+
     .modal-welcome .modal-dialog {
         max-width: 670px;
     }

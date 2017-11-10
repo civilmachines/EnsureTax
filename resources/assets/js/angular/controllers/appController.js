@@ -5,10 +5,39 @@ app
     .controller('appCtrl', ['$scope', '$rootScope', '$state', '$stateParams', '$appModel', function ($scope, $rootScope, $state, $stateParams, $appModel) {
 
     }])
+
+    .controller('taxTypeCtrl', ['$scope', '$auth', '$authModel','$window', '$uibModal', function ($scope, $auth, $authModel, $window, $uibModal) {
+        angular.extend($scope, {
+            close: function () {
+                $scope.$dismiss();
+            },
+            incomeTax: function () {
+                $scope.$dismiss();
+                $uibModal.open({
+                    templateUrl: 'login.html',
+                    controller: 'authCtrl',
+                    windowClass: 'modal-login'
+                })
+            },
+            gstLogin: function () {
+                $window.location.href = 'http://gst.ensuretax.com'
+                // $window.location.href = 'local.gst.com/';
+                /*$uibModal.open({
+                 templateUrl: 'gst_login.html',
+                 controller: 'gstLoginCtrl',
+                 windowClass: 'modal-login',
+                 })
+                 $scope.$dismiss();*/
+            }
+
+        });
+
+    }])
+
     .controller('authCtrl', ['$scope', '$rootScope', '$state', '$stateParams', '$timeout', '$sce', '$compile', '$auth', '$appModel', '$authModel', 'toastr', function ($scope, $rootScope, $state, $stateParams, $timeout, $sce, $compile, $auth, $appModel, $authModel, toastr) {
         angular.extend($scope, {
             user: {
-                email: $stateParams.u,
+                email: $stateParams.u
             },
             close: function () {
                 $scope.$dismiss();
@@ -29,13 +58,13 @@ app
             signin: function () {
                 $timeout(function () {
                     $state.go('auth', {q: 'login'});
-                })
+                });
                 $state.go('auth', {q: 'login'});
             },
             reset: function () {
                 $timeout(function () {
                     $state.go('auth', {q: 'reset'});
-                })
+                });
                 $state.go('auth', {q: 'reset'});
             },
             register: function () {
@@ -63,7 +92,6 @@ app
                 if ($scope.otpLoginForm.$valid) {
                     $appModel.progressBar(true, $scope);
                     resetRequest($scope.user);
-
                 }
             },
             verify: function () {
@@ -84,7 +112,7 @@ app
                 }
             },
             authenticate: function (provider) {
-                sccialLogin(provider);
+                socialLogin(provider);
             }
 
         });
@@ -214,7 +242,7 @@ app
                 });
         }
 
-        function sccialLogin(provider) {
+        function socialLogin(provider) {
             $auth.authenticate(provider)
                 .then(function (result) {
                     if (result.data.success) {
@@ -227,4 +255,85 @@ app
                 });
         }
 
-    }]);
+    }])
+
+/*
+
+ .controller('gstLoginCtrl', ['$scope', '$appModel', '$state', '$gstModel', function ($scope, $appModel, $state, $gstModel) {
+ angular.extend($scope, {
+ login: function () {
+ if ($scope.loginForm.$valid) {
+ $appModel.progressBar(true, $scope);
+ var data = {
+ username: $scope.user.user_name,
+ password: $scope.user.password
+ };
+ login(data);
+ }
+ },
+
+ alink: function (clsValue) {
+ if (clsValue) {
+ $scope.active = 'active ' + clsValue;
+ } else {
+ $scope.active = '';
+ }
+ },
+
+ otpLogin: function () {
+ if ($scope.otpLoginForm.$valid) {
+ $appModel.progressBar(true, $scope);
+ var data = {
+ value: $scope.user.user_name
+ };
+ verifyUser(data)
+ }
+ },
+ verifyOtp: function () {
+ $scope.$broadcast('show-errors-check-validity');
+ if ($scope.otpForm.$valid) {
+ $appModel.progressBar(true, $scope);
+ var data = {
+ value: $scope.user.user_name,
+ otp: $scope.user.otp
+ };
+ console.log(data)
+ verifyOTP(data);
+ }
+ }
+ });
+
+ function login(data) {
+ $gstModel.gstLogin(data).then(function (result) {
+ if (result.data.data.token) {
+ $gstModel.gstLoginSuccess(result.data.data);
+ } else {
+ toastr.error('Invalid Credemtials', 'Error!');
+ }
+ $appModel.progressBar(false, $scope);
+ })
+ }
+
+ function verifyUser(data) {
+ $scope.alink('otp');
+ $appModel.progressBar(false, $scope);
+ /!* $gstModel.verifyUser(data).then(function (result) {
+ console.log(result)
+ })*!/
+ }
+
+ function verifyOTP(data) {
+ console.log(data)
+ $gstModel.verifyUser(data).then(function (result) {
+ if (result.data.data.token) {
+ $gstModel.gstLoginSuccess(result.data.data);
+ } else {
+ toastr.error('Invalid Credemtials', 'Error!');
+ }
+ $appModel.progressBar(false, $scope);
+ })
+ }
+ }])
+
+
+ */

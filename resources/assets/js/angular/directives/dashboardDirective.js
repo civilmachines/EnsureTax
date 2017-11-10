@@ -68,14 +68,13 @@ app
                     if (newValue && newValue > 2) {
                         scope.getContentUrl = function () {
                             return 'itr_' + parseInt(newValue) + '.html';
-                        }
+                        };
                     } else {
                         scope.getContentUrl = function () {
                             return 'empty.html';
                         }
                     }
                 });
-
             },
             template: '<div ng-include="getContentUrl()"></div>'
         }
@@ -90,10 +89,10 @@ app
                     'data-ng-disabled="activated">Save' +
                     '</button>';
                 return !$authModel.viewPermission($CONFIG.$ROLES.ADMIN) ? html : '<span></span>'
-
             }
         }
     }])
+
     .directive('nextBtn', ['$authModel', '$CONFIG', function ($authModel, $CONFIG) {
         return {
             restrict: 'E',

@@ -66,6 +66,10 @@ var app = angular.module('101housing', ['ui.router', 'ngMaterial', 'ngAnimate', 
         'API_POST_AUTH_CHECKOUT': baseUrl + 'api/v1/auth/checkout',
         // 'API_POST_USER_PROFILE': baseUrl + 'api/v1/auth/user/profile',
 
+        /*-------------------------------GST API-----------------------------------------*/
+        'API_GST_USER_LOGIN': 'http://apigst.ensuretax.com/' + 'api/user/login/',
+        'API_LOGIN_OTP_USER': 'http://apigst.ensuretax.com/' + 'api/user/loginotp/',
+
         /*-------------------------------ensureTax API-----------------------------------------*/
 
         'API_ITR_LIST': baseUrl + 'api/v1/itrlist',
@@ -159,17 +163,19 @@ var app = angular.module('101housing', ['ui.router', 'ngMaterial', 'ngAnimate', 
         $authProvider.baseUrl = '/';
         $authProvider.tokenName = 'tax';
         $authProvider.tokenPrefix = 'en';
+        $authProvider.tokenPrefix = 'satellizer';
+        $authProvider.tokenName = '_s_t_';
         $authProvider.tokenHeader = 'Authorization';
         $authProvider.tokenType = 'Bearer';
         $authProvider.storageType = 'localStorage';
         $authProvider.facebook({
             clientId: '198523190660678',
             // responseType: 'token',
-            url: $API.API_POST_FACEBOOK_LOGIN,
+            url: $API.API_POST_FACEBOOK_LOGIN
         });
         $authProvider.google({
             clientId: '783139877765-p45og29bv58uh1k4kfpmg43dbshv4j8q.apps.googleusercontent.com',
-            url: $API.API_POST_GOOGLE_LOGIN,
+            url: $API.API_POST_GOOGLE_LOGIN
         });
         angular.extend(toastrConfig, {
             autoDismiss: true,
@@ -194,7 +200,7 @@ var app = angular.module('101housing', ['ui.router', 'ngMaterial', 'ngAnimate', 
         this.$get = function () {
             return {showSuccess: _showSuccess};
         };
-    })
+    });
 
 
 // function skipIfLoggedIn($q, $auth) {

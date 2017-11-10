@@ -18,8 +18,8 @@ app
                         if (!$auth.isAuthenticated()) {
                             $uibModal.open({
                                 templateUrl: 'authentication.html',
-                                controller: 'authCtrl',
-                                windowClass: 'modal-login',
+                                controller: 'taxTypeCtrl',
+                                windowClass: 'two-login',
                             })
                             //   change route after modal result
                                 .result.then(function () {
@@ -269,6 +269,7 @@ app
                     var currentValue = element.val();
                     $authModel.checkExist(keyProperty.property, currentValue)
                         .then(function (unique) {
+
                             //Ensure value that being checked hasn't changed
                             //since the Ajax call was made
                             var status = unique.data.isUnique ? false : true;
@@ -300,10 +301,12 @@ app
                     var currentValue = element.val();
                     $authModel.checkExist(keyProperty.property, currentValue)
                         .then(function (data) {
+                            console.log(data)
                             //Ensure value that being checked hasn't changed
                             //since the Ajax call was made
                             if (currentValue === element.val()) {
                                 ngModel.$setValidity('exist', data.data.isUnique);
+                                console.log('exist', data.data.isUnique)
                                 // scope.$broadcast('show-errors-check-validity');
                             }
                         }).catch(function (response) {

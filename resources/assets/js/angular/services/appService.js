@@ -58,20 +58,21 @@ app
                 },
                 url: $API.API_USER_LOGOUT,
                 method: 'POST',
-                data: {token: $auth.getToken()},
+                data: {
+                    token: $auth.getToken()
+                }
             }).success(function (response) {
                 if (response.success) {
                     $auth.logout();
-                    localStorageService.clearAll()
+                    localStorageService.clearAll();
                     // $state.reload();
-                    $window.location.href = '/';
+                    $window.location.href = 'http://ensuretax.com';
                 }
                 return response;
             }).error(function (data, status, headers) {
                 $appModel.error(data, status);
                 $window.location.href = '/';
             });
-
         };
         $appModel.contactUS = function (data) {
             return $http({
@@ -246,6 +247,7 @@ app
                 return data;
             });
         };
+
         $authModel.loginSuccess = function (data) {
             $auth.setToken(data.data.token);
             // $timeout(function () {
@@ -303,4 +305,49 @@ app
                 $authUser['admin'] = data.admin;
         };
         return $authModel;
+    }])
+
+
+    .factory('$gstModel', ['$http', '$API', '$CONFIG', '$state', '$auth', '$window', 'toastr', '$appModel', 'localStorageService', function ($http, $API, $CONFIG, $state, $auth, $window, toastr, $appModel, localStorageService) {
+        var $gstModel = {};
+        var $authUser = {};
+        $gstModel.gstLogin = function (data) {
+            return $http({
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                url: $API.API_GST_USER_LOGIN,
+                method: 'POST',
+                data: data
+            }).success(function (response) {
+                return response;
+            }).error(function (data, status, headers) {
+                toastr.error(data.non_field_errors, 'Invalid Credentials', 'Error!');
+                return $appModel.error(data, status);
+            });
+        };
+
+        $gstModel.gstLoginSuccess = function (data) {
+            $auth.setToken(data.token);
+            toastr.success('Welcome to GST.', 'Successful!');
+            $window.location.href = 'http://gst.ensuretax.com/dashboard';
+        };
+
+        $gstModel.verifyUser = function (data) {
+            return $http({
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                url: $API.API_LOGIN_OTP_USER,
+                method: 'POST',
+                data: data
+            }).success(function (response) {
+                return response;
+            }).error(function (data, status, headers) {
+                console.log(data)
+                /*$appModel.error(data, status);
+                 return data;*/
+            });
+        };
+        return $gstModel;
     }])

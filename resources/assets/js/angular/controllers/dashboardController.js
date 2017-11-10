@@ -178,6 +178,7 @@ app
                 }
             }
         });
+
         function itrList(data) {
             data = {
                 status: data.status,
@@ -684,12 +685,12 @@ app
         });
     }])
     .controller('corporateITRList', ['$scope', '$state', '$filter', 'resolveData', 'toastr', '$appModel', '$dashboardModel', 'localStorageService', function ($scope, $state, $filter, resolveData, toastr, $appModel, $dashboardModel, localStorageService) {
-       /* if (!$dashboardModel.corpItrList.length > 0) {
-            $scope.not_found = true;
-            $scope.itr_exists = false;
-            $scope.message = 'Data Not Found';
-            return false;
-        }*/
+        /* if (!$dashboardModel.corpItrList.length > 0) {
+         $scope.not_found = true;
+         $scope.itr_exists = false;
+         $scope.message = 'Data Not Found';
+         return false;
+         }*/
         // $scope.itr_exists = true;
         angular.extend($scope, {
             filterdata: {
@@ -948,11 +949,11 @@ app
     }])
     .controller('gstFilesCtrl', ['$scope', '$state', '$filter', 'resolveData', 'toastr', '$appModel', '$dashboardModel', 'localStorageService', function ($scope, $state, $filter, resolveData, toastr, $appModel, $dashboardModel, localStorageService) {
         localStorageService.clearAll();
-       /* if (!$dashboardModel.GSTFiles.length > 0) {
-            $scope.not_found = true;
-            $scope.message = 'Data Not Found';
-            return false;
-        }*/
+        /* if (!$dashboardModel.GSTFiles.length > 0) {
+         $scope.not_found = true;
+         $scope.message = 'Data Not Found';
+         return false;
+         }*/
         angular.extend($scope, {
             filterdata: {
                 minValue: 0,
@@ -1026,14 +1027,14 @@ app
             })
         }
 
-         $scope.$watchCollection(function () {
-         return $appModel.loadMasterCategory;
-         }, function (newval, oldval) {
-         if ($appModel.loadMasterCategory.length > 0) {
-         var loadMaster = $filter('parseParent')($appModel.loadMasterCategory, 0);
-         $scope.status = loadMaster.application_status;
-         }
-         });
+        $scope.$watchCollection(function () {
+            return $appModel.loadMasterCategory;
+        }, function (newval, oldval) {
+            if ($appModel.loadMasterCategory.length > 0) {
+                var loadMaster = $filter('parseParent')($appModel.loadMasterCategory, 0);
+                $scope.status = loadMaster.application_status;
+            }
+        });
 
         $scope.$watchCollection(function () {
             return $dashboardModel.GSTFiles;
